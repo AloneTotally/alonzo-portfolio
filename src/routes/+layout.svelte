@@ -3,7 +3,7 @@
 </script>
 
 <slot />
-<nav
+<!-- <nav
 	class="bg-slate-700 w-screen fixed top-0 h-16 text-white flex items-center px-5 justify-between"
 >
 	<div>Alonzo Puah</div>
@@ -12,4 +12,4 @@
 		<a href="/">Project</a>
 		<a href="/">Roadmap</a>
 	</div>
-</nav>
+</nav> -->
