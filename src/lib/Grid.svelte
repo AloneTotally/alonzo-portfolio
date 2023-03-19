@@ -15,13 +15,29 @@
 			console.log('lol');
 		}
 	}
-	// $: style = `w-screen h-screen grid grid-cols-[repeat(${columns},_1fr)] grid-rows-[repeat(${rows},_1fr)]`;
-	// const handleClick = (index) => {};
+	import anime from '../../node_modules/animejs/lib/anime.es.js';
+	let toggled = true;
+
+	const handleClick = (index) => {
+		toggled = !toggled;
+		anime({
+			targets: '.tile', // thing to animate
+			opacity: toggled ? 0 : 1,
+			delay: anime.stagger(50, {
+				grid: [columns, rows],
+				from: index
+			})
+		});
+	};
 </script>
 
-<div id="wrapper">
-	{#each Array.from(Array(numSquares)) as i}
-		<div class="w-[48px] h-[48px] border border-indigo-300" />
+<div id="wrapper" class="absolute inset-0 z-10 grid">
+	{#each Array.from(Array(numSquares).keys()) as i}
+		<div
+			class="w-[48px] h-[48px] tile bg-slate-900 hover:bg-slate-800"
+			on:click={() => handleClick(i)}
+			on:keydown={() => console.log('keydown')}
+		/>
 	{/each}
 </div>
 
@@ -33,7 +49,6 @@
 	#wrapper {
 		min-height: 100vh;
 		min-width: 100vh;
-		display: grid;
 		grid-template-columns: repeat(var(--columns), 1fr);
 		grid-template-rows: repeat(var(--rows), 1fr);
 	}
