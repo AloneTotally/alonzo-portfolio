@@ -32,7 +32,7 @@
 		<div class="text-5xl font-bold w-full text-center">
 			Hello. I am Alonzo Puah, a student in Singapore
 		</div>
-		<button class="px-5 py-7 bg-slate-800 mt-10 text-lg font-light hover:bg-slate-700 "
+		<button class="px-7 py-4 bg-slate-800 mt-10 text-lg font-light hover:bg-slate-700 "
 			>View my stuff ↓</button
 		>
 	</div>

@@ -31,10 +31,10 @@
 	};
 </script>
 
-<div id="wrapper" class="absolute inset-0 z-10 grid">
+<div id="wrapper" class="absolute inset-0 z-10 grid gap-0">
 	{#each Array.from(Array(numSquares).keys()) as i}
 		<div
-			class="w-[48px] h-[48px] tile bg-slate-900 hover:bg-slate-800"
+			class="min-w-[48px] min-h-[48px] tile bg-slate-900 hover:bg-slate-800 m-0 cursor-pointer"
 			on:click={() => handleClick(i)}
 			on:keydown={() => console.log('keydown')}
 		/>
