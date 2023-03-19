@@ -7,12 +7,11 @@
 	let rows = 0;
 	let columns = 0;
 	const setRowsColumns = () => {
-		rows = Math.floor(document.body.clientWidth / 48);
-		columns = Math.floor(document.body.clientHeight / 48);
+		rows = Math.floor(document.body.clientHeight / 48);
+		columns = Math.floor(document.body.clientWidth / 48);
 		console.log('window width and height:', document.body.clientWidth, document.body.clientHeight);
 	};
 	onMount(() => {
-		setRowsColumns();
 		setRowsColumns();
 	});
 	try {

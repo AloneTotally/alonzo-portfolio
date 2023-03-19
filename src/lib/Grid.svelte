@@ -21,7 +21,7 @@
 
 <div id="wrapper">
 	{#each Array.from(Array(numSquares)) as i}
-		<div class="w-[50px] h-[50px] border border-indigo-300" />
+		<div class="w-[48px] h-[48px] border border-indigo-300" />
 	{/each}
 </div>
 
