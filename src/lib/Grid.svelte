@@ -34,7 +34,7 @@
 <div id="wrapper" class="absolute inset-0 z-10 grid gap-0">
 	{#each Array.from(Array(numSquares).keys()) as i}
 		<div
-			class="min-w-[48px] min-h-[48px] tile bg-slate-900 hover:bg-slate-800 m-0 cursor-pointer"
+			class="min-w-[75px] min-h-[75px] tile bg-slate-900 hover:bg-slate-800 m-0 cursor-pointer"
 			on:click={() => handleClick(i)}
 			on:keydown={() => console.log('keydown')}
 		/>
@@ -51,5 +51,8 @@
 		min-width: 100vh;
 		grid-template-columns: repeat(var(--columns), 1fr);
 		grid-template-rows: repeat(var(--rows), 1fr);
+	}
+	.tile {
+		border: 0.5px solid #4f46e5;
 	}
 </style>

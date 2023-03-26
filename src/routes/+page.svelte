@@ -7,8 +7,8 @@
 	let rows = 0;
 	let columns = 0;
 	const setRowsColumns = () => {
-		rows = Math.floor(window.innerHeight / 48);
-		columns = Math.floor((window.innerWidth - 5) / 48);
+		rows = Math.floor(window.innerHeight / 75);
+		columns = Math.floor((window.innerWidth - 5) / 75);
 		console.log('window width and height:', window.innerWidth, window.innerHeight);
 	};
 	onMount(() => {
