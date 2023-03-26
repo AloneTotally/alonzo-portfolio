@@ -1,6 +1,7 @@
 <script>
 	export let rows = 0;
 	export let columns = 0;
+	export let startGridAnimation = false;
 	let numSquares = 0;
 	$: {
 		numSquares = rows * columns;
@@ -16,26 +17,44 @@
 		}
 	}
 	import anime from '../../node_modules/animejs/lib/anime.es.js';
-	let toggled = true;
+	// let toggled = false;
 
-	const handleClick = (index) => {
-		toggled = !toggled;
-		anime({
-			targets: '.tile', // thing to animate
-			opacity: toggled ? 0 : 1,
-			delay: anime.stagger(50, {
-				grid: [columns, rows],
-				from: index
-			})
-		});
-	};
+	// const handleClick = (index) => {
+	// 	toggled = !toggled;
+	// 	console.log(index);
+	// 	anime({
+	// 		targets: '.tile', // thing to animate
+	// 		opacity: toggled ? 0 : 1,
+	// 		delay: anime.stagger(50, {
+	// 			grid: [columns, rows],
+	// 			from: index
+	// 		})
+	// 	});
+	// };
+	$: {
+		if (startGridAnimation) {
+			let index = Math.floor((rows * columns) / 2).toString();
+			console.log(index);
+			anime({
+				targets: '.tile', // thing to animate
+				opacity: 0,
+				delay: anime.stagger(50, {
+					grid: [columns, rows],
+					from: index
+				}),
+				changeComplete: () => {
+					// @ts-ignore
+					document.getElementById('wrapper').style.zIndex = -1;
+				}
+			});
+		}
+	}
 </script>
 
 <div id="wrapper" class="absolute inset-0 z-10 grid gap-0">
 	{#each Array.from(Array(numSquares).keys()) as i}
 		<div
-			class="min-w-[75px] min-h-[75px] tile bg-slate-900 hover:bg-slate-800 m-0 cursor-pointer"
-			on:click={() => handleClick(i)}
+			class="min-w-[60px] min-h-[60px] tile bg-slate-900 hover:bg-slate-800 m-0 cursor-pointer"
 			on:keydown={() => console.log('keydown')}
 		/>
 	{/each}
@@ -52,7 +71,7 @@
 		grid-template-columns: repeat(var(--columns), 1fr);
 		grid-template-rows: repeat(var(--rows), 1fr);
 	}
-	.tile {
+	/* .tile {
 		border: 0.5px solid #4f46e5;
-	}
+	} */
 </style>
