@@ -17,45 +17,54 @@
 		}
 	}
 	import anime from '../../node_modules/animejs/lib/anime.es.js';
-	// let toggled = false;
+	let toggled = false;
 
-	// const handleClick = (index) => {
-	// 	toggled = !toggled;
-	// 	console.log(index);
-	// 	anime({
-	// 		targets: '.tile', // thing to animate
-	// 		opacity: toggled ? 0 : 1,
-	// 		delay: anime.stagger(50, {
-	// 			grid: [columns, rows],
-	// 			from: index
-	// 		})
-	// 	});
-	// };
+	const handleClick = (index) => {
+		toggled = !toggled;
+		console.log(index);
+		anime({
+			targets: '.tile', // thing to animate
+			opacity: toggled ? 0 : 1,
+			delay: anime.stagger(75, {
+				grid: [columns, rows],
+				from: index
+			})
+		});
+	};
 	$: {
 		if (startGridAnimation) {
-			let index = Math.floor((rows * columns) / 2).toString();
-			console.log(index);
+			let index;
+			if (rows % 2 == 1) {
+				index = Math.floor((rows * columns) / 2).toString();
+				console.log(index, 'odd');
+			} else {
+				index = Math.floor((rows * columns) / 2 + columns / 2).toString();
+				console.log(index, 'even');
+			}
 			anime({
 				targets: '.tile', // thing to animate
 				opacity: 0,
-				delay: anime.stagger(50, {
+				delay: anime.stagger(75, {
 					grid: [columns, rows],
 					from: index
+					// easing: 'easeInQuad'
 				}),
 				changeComplete: () => {
 					// @ts-ignore
 					document.getElementById('wrapper').style.zIndex = -1;
+					// @ts-ignore
+					document.getElementById('wrapper').hidden = true;
 				}
 			});
 		}
 	}
 </script>
 
-<div id="wrapper" class="absolute inset-0 z-10 grid gap-0">
+<div id="wrapper" class="fixed inset-0 z-10 grid gap-0">
 	{#each Array.from(Array(numSquares).keys()) as i}
 		<div
 			class="min-w-[60px] min-h-[60px] tile bg-slate-900 hover:bg-slate-800 m-0 cursor-pointer"
-			on:keydown={() => console.log('keydown')}
+			on:click={() => handleClick(i)}
 		/>
 	{/each}
 </div>
