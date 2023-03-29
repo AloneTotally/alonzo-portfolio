@@ -1,4 +1,4 @@
-<div class="text-white flex flex-col items-center text-lg">
+<div id="aboutme" class="text-white flex flex-col items-center text-lg scroll-mt-16">
 	<h2 class="font-extrabold text-4xl mt-10">About me</h2>
 	<span class="text-slate-400">My introduction</span>
 	<div class="flex mt-16">
