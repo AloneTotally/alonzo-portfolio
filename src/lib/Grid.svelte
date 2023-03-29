@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	export let rows = 0;
 	export let columns = 0;
 	export let startGridAnimation = false;
@@ -19,7 +19,7 @@
 	import anime from '../../node_modules/animejs/lib/anime.es.js';
 	let toggled = false;
 
-	const handleClick = (index) => {
+	const handleClick = (index: number) => {
 		toggled = !toggled;
 		console.log(index);
 		anime({
@@ -65,6 +65,7 @@
 		<div
 			class="min-w-[60px] min-h-[60px] tile bg-slate-900 hover:bg-slate-800 m-0 cursor-pointer"
 			on:click={() => handleClick(i)}
+			on:keydown={() => console.log('hi')}
 		/>
 	{/each}
 </div>

@@ -4,7 +4,7 @@
 	<div class="flex mt-16">
 		<img class="rounded-full w-48 h-48" src="https://picsum.photos/400/400" alt="" />
 		<div class="grid justify-center flex-col max-w-md ml-10">
-			<div>I am a student at the school of science and technology.</div>
+			<div>I am a student at the School of Science and Technology.</div>
 			<div class="">
 				While I was there I worked on projects and gained some knowledge of programming from there,
 				most of which is self-taught.

@@ -2,11 +2,18 @@
 	import Aboutme from '$lib/Aboutme.svelte';
 	import Projects from '$lib/Projects.svelte';
 	import Grid from '$lib/Grid.svelte';
+	import Timeline from '$lib/Timeline.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
 	let rows = 0;
 	let columns = 0;
+	let timeline = [
+		{
+			date: '2016',
+			text: 'Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.'
+		}
+	];
 	const setRowsColumns = () => {
 		rows = Math.floor(window.innerHeight / 60);
 		columns = Math.floor((window.innerWidth - 5) / 60);
@@ -56,6 +63,7 @@
 	<Grid {rows} {columns} {startGridAnimation} />
 	<Aboutme />
 	<Projects />
+	<Timeline {timeline} />
 </body>
 
 <style>
