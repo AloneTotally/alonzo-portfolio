@@ -13,11 +13,15 @@
 </div>
 <div>
 	{#each timeline as element}
-		<div class="flex flex-row items-end">
-			<div class="w-1 h-full bg-indigo-600" />
-			<div class="flex flex-col min-w-5/12">
+		<div class="flex flex-row w-full items-stretch">
+			<div class="flex flex-col">
+				<div class="w-1 bg-indigo-600 mx-12 line h-1/2" />
+				<div class="rounded-full w-5 h-5 bg-indigo-500 mx-10" />
+				<div class="w-1 bg-indigo-600 mx-12 line h-1/2" />
+			</div>
+			<div class="flex flex-col max-w-5/12 mr-10 mt-10">
 				<div class="font-bold text-5xl">{element.date}</div>
-				<p class="text-right">{element.text}</p>
+				<p class="text-left mb-10">{element.text}</p>
 			</div>
 		</div>
 	{/each}
