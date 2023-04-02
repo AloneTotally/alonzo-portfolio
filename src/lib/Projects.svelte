@@ -22,8 +22,8 @@
 
 <div class="text-white flex flex-col items-center text-lg">
 	<h2 class="font-extrabold text-4xl mt-10">Projects</h2>
-	<span class="text-slate-400 mb-16">Projects that I have coded up/designed</span>
-	<div class="flex gap-2 w-10/12">
+	<span class="text-slate-400 mb-16">Personal projects that I have coded up/designed</span>
+	<div class="grid grid-cols-2 gap-2 w-10/12">
 		<!-- TODO: THIS PART NOT FINISHED -->
 		{#each cardData as card}
 			<Card title={card.title} description={card.description} />
