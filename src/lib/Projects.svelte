@@ -20,7 +20,7 @@
 	];
 </script>
 
-<div class="text-white flex flex-col items-center text-lg">
+<div class="text-white flex flex-col items-center text-lg scroll-mt-10" id="projects">
 	<h2 class="font-extrabold text-4xl mt-10">Projects</h2>
 	<span class="text-slate-400 mb-16">Personal projects that I have coded up/designed</span>
 	<div class="grid grid-cols-2 gap-2 w-10/12">

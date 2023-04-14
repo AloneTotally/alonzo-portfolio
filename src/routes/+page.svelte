@@ -73,19 +73,37 @@
 			<div class="loading z-20 w-10 h-10 bg-slate-900" id="loading" transition:fade />
 		</div>
 	{/if}
-	<div class="bg-indigo-600 flex justify-center items-center flex-col" id="hiddencontent">
-		<!-- <div
-			class="absolute bottom-2/3 right-1/2 translate-x-1/2 translate-y-3/4 text-5xl font-bold w-full text-center"
+
+	<button
+		on:click={() =>
+			window.scroll({
+				top: 0,
+				left: 0,
+				behavior: 'smooth'
+			})}
+		class="fixed z-10 bg-indigo-600 bottom-10 right-10 rounded-full w-10 h-10 text-center"
+	>
+		&uparrow;
+	</button>
+	<!-- <div
+		class="absolute bottom-2/3 right-1/2 translate-x-1/2 translate-y-3/4 text-5xl font-bold w-full text-center"
 		>
-			Hello. I am Alonzo Puah, a student in Singapore
-		</div> -->
-		<div class="text-5xl font-bold w-full text-center">
-			Hello. I am Alonzo Puah, a student in Singapore
-		</div>
-		<a class="px-7 py-4 bg-slate-800 mt-10 text-lg font-light hover:bg-slate-700 " href="#aboutme"
-			>View my stuff &darr;</a
+		Hello. I am Alonzo Puah, a student in Singapore
+	</div> -->
+	<div class="custom-shape-divider-bottom-1681473540">
+		<svg
+			data-name="Layer 1"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 1200 120"
+			preserveAspectRatio="none"
 		>
+			<path
+				d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+				class="fill-slate-900"
+			/>
+		</svg>
 	</div>
+
 	<Grid {rows} {columns} {startGridAnimation} />
 	<Aboutme />
 	<Projects />
@@ -93,6 +111,23 @@
 </body>
 
 <style>
+	.custom-shape-divider-bottom-1681473540 {
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		line-height: 0;
+		transform: rotate(180deg);
+	}
+
+	.custom-shape-divider-bottom-1681473540 svg {
+		position: relative;
+		display: block;
+		width: 100vw;
+		height: 75px;
+	}
+
 	.loading-wrapper {
 		width: 100%;
 		height: 100%;
@@ -117,9 +152,5 @@
 		100% {
 			transform: rotate(360deg);
 		}
-	}
-	#hiddencontent {
-		min-height: 100vh;
-		min-width: 100vh;
 	}
 </style>
