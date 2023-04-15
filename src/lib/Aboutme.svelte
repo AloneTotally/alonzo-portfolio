@@ -1,5 +1,9 @@
+<script>
+	import Profile from '$lib/assets/myself.jpg';
+</script>
+
 <div class="bg-indigo-600 flex justify-center items-center flex-row" id="hiddencontent">
-	<div class="flex justify-center flex-col pl-24" id="aboutme">
+	<div class="flex justify-center flex-col xl:pl-56 md:pl-10" id="aboutme">
 		<div class="text-5xl font-bold w-full">Hi, I am Alonzo Puah</div>
 		<div class="text-2xl font-bold w-full text-slate-300 mt-3">SST student in Singapore</div>
 		<div class="mt-10 w-9/12">
@@ -64,13 +68,8 @@
 		>
 	</div>
 
-	<div class="min-h-screen flex items-center justify-center pr-24">
-		<img
-			class="rounded-full"
-			src="https://picsum.photos/400/400"
-			alt=""
-			style="height: 100%; width: auto"
-		/>
+	<div class="min-h-screen flex items-center justify-center xl:pr-56 sm:pr-10">
+		<img class="rounded-full h-auto w-3/4" src={Profile} alt="" />
 	</div>
 </div>
 
