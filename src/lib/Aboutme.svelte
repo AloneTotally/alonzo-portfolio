@@ -11,7 +11,7 @@
 			self-taught.
 		</div>
 		<div class="text-slate-200 mt-3">Personal email: alonzothenoob@gmail.com</div>
-		<div class="flex">
+		<div class="flex mt-5">
 			<a href="https://github.com/AloneTotally" target="_blank" rel="noreferrer">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

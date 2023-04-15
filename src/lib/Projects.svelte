@@ -3,27 +3,33 @@
 
 	let cardData = [
 		{
-			title: 'Example project',
+			title: 'CM project',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, aliquam quos, quae maxime nesciunt quo itaque ducimus soluta porro quam vel! Aliquam blanditiis quis, adipisci qui eum labore nisi optio!'
+				'A forum website which is focused on questions that are environmentally related.',
+			link: 'https://github.com/AloneTotally/cmproject-reMake'
 		},
 		{
-			title: 'Example project',
+			title: 'Rebot',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, aliquam quos, quae maxime nesciunt quo itaque ducimus soluta porro quam vel! Aliquam blanditiis quis, adipisci qui eum labore nisi optio!'
+				'A website used to help the ease of communication between the ICT helpdesk and the students in a school (Not done)'
 		},
 		{
-			title: 'Example project',
+			title: 'Foodie',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, aliquam quos, quae maxime nesciunt quo itaque ducimus soluta porro quam vel! Aliquam blanditiis quis, adipisci qui eum labore nisi optio!'
+				'My Secondary 4 computing+ coursework, which helps you decide what to eat judging by the locations near you',
+			link: 'https://github.com/AloneTotally/JSAcompcoursework2023'
+		},
+		{
+			title: 'This portfolio website :D',
+			description: 'My portfolio website'
 		}
 	];
 </script>
 
 <div class="text-white flex flex-col items-center text-lg scroll-mt-10" id="projects">
 	<h2 class="font-extrabold text-4xl mt-10">Projects</h2>
-	<span class="text-slate-400 mb-16">Personal projects that I have coded up/designed</span>
-	<div class="grid grid-cols-2 gap-2 w-10/12">
+	<span class="text-slate-400 mb-16">My projects</span>
+	<div class="grid grid-cols-3 gap-2 w-10/12">
 		<!-- TODO: THIS PART NOT FINISHED -->
 		{#each cardData as card}
 			<Card title={card.title} description={card.description} />
