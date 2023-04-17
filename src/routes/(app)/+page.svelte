@@ -2,13 +2,26 @@
 	import Aboutme from '$lib/Aboutme.svelte';
 	import Projects from '$lib/Projects.svelte';
 	import Grid from '$lib/Grid.svelte';
-	import Timeline from '$lib/Timeline.svelte';
+	import Education from '$lib/Education.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import Competitions from '$lib/Competitions.svelte';
+	import { goto } from '$app/navigation';
+	import { projectInfo } from '$lib/stores';
 
 	let rows = 0;
 	let columns = 0;
+	let loadIndex = 0;
+	const handleCardClicked = (/** @type {CustomEvent<any>} */ e) => {
+		console.log('event received');
+
+		loadIndex = e.detail.loadIndex;
+		console.log(loadIndex);
+		startGridAnimation = false;
+		setTimeout(() => {
+			goto(`${$projectInfo.title}`);
+		}, 1000);
+	};
 	const setRowsColumns = () => {
 		rows = Math.floor(window.innerHeight / 60);
 		columns = Math.floor((window.innerWidth - 5) / 60);
@@ -73,10 +86,10 @@
 		</svg>
 	</div>
 
-	<Grid {rows} {columns} {startGridAnimation} />
+	<Grid {rows} {columns} {startGridAnimation} bind:loadIndex />
 	<Aboutme />
-	<Projects />
-	<Timeline />
+	<Projects on:cardclicked={(e) => handleCardClicked(e)} />
+	<Education />
 	<Competitions />
 </body>
 
@@ -113,7 +126,7 @@
 		transform: translate(-50%, -50%); */
 		/* 		background-color: #FFF; */
 		border: 2px #fff solid;
-		animation: loader 1.3s infinite ease-in-out;
+		animation: loader 1s infinite ease-in-out;
 	}
 	@keyframes loader {
 		0% {
