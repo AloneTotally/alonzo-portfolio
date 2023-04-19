@@ -6,7 +6,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="bg-gray-800 flex flex-col pb-5 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-300 cursor-pointer"
+	class=" bg-gray-800 flex flex-col pb-5 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-300 cursor-pointer"
 	on:click
 >
 	<img src={photoURL} alt="" class="w-full h-auto rounded-t-xl" />

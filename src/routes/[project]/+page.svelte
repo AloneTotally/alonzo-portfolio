@@ -9,27 +9,20 @@
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import { redirect } from '@sveltejs/kit';
 	// import { goto } from '$app/navigation';
 	const name = $page.params.project;
 
-	console.log(name);
+	// console.log(name);
 	const projectInfo = cardData[name];
 	const index = Object.keys(cardData).indexOf(projectInfo.title);
 	const filepath = `../../../src/lib/assets/${name}.jpg`.toString();
-	console.log(filepath);
+	// console.log(filepath);
 
 	var startGridAnimation = false;
 	onMount(() => {
 		startGridAnimation = true;
 		console.log(projectInfo);
 	});
-	const prevProject = () => {
-		throw redirect(300, Object.keys(cardData)[index - 1]);
-	};
-	const nextProject = () => {
-		throw redirect(300, Object.keys(cardData)[index + 1]);
-	};
 </script>
 
 <body class="bg-slate-900">
@@ -40,7 +33,6 @@
 		<div
 			class="loading-wrapper z-20 bg-slate-900 flex justify-center items-center"
 			id="loading-wrapper"
-			transition:fade
 		>
 			<div class="loading z-20 w-10 h-10 bg-slate-900" id="loading" transition:fade />
 		</div>
@@ -55,11 +47,18 @@
 			{/each}
 		</div>
 		<div class="right-0 fixed w-4/12 pl-10">
-			<div class="flex flex-row justify-between mt-5 mr-5">
+			<div class="flex flex-row justify-between mt-5 -ml-5 mr-5">
 				{#if index > 0}
-					<a rel="external" href={Object.keys(cardData)[index - 1]}>&leftarrow;</a>
+					<a
+						rel="external"
+						href={Object.keys(cardData)[index - 1]}
+						class="flex flex-col justify-center items-center popupwrapper"
+					>
+						<p>&leftarrow;</p>
+						<p class="text-xs popup transition-all duration-300">Previous project</p>
+					</a>
 				{/if}
-				<a href="/">
+				<a class="flex flex-col justify-center items-center popupwrapper" href="/">
 					<svg
 						width="30"
 						height="30"
@@ -72,9 +71,17 @@
 							fill="#F9FAFB"
 						/>
 					</svg>
+					<p class="text-xs popup transition-all duration-300">Back to home</p>
 				</a>
 				{#if index < Object.keys(cardData).length - 1}
-					<a rel="external" href={Object.keys(cardData)[index + 1]}>&rightarrow;</a>
+					<a
+						rel="external"
+						href={Object.keys(cardData)[index + 1]}
+						class="flex flex-col justify-center items-center popupwrapper"
+					>
+						<p>&rightarrow;</p>
+						<p class="text-xs popup transition-all duration-300">Next project</p>
+					</a>
 				{/if}
 			</div>
 			<h1 class="font-bold text-4xl mt-10">{projectInfo.title}</h1>
@@ -142,5 +149,11 @@
 		100% {
 			transform: rotate(90deg);
 		}
+	}
+	.popup {
+		opacity: 0;
+	}
+	.popupwrapper:hover .popup {
+		opacity: 1;
 	}
 </style>
