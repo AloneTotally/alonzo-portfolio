@@ -22,7 +22,7 @@
 			document.documentElement.style.setProperty('--rows', rows);
 			// @ts-ignore
 			document.documentElement.style.setProperty('--columns', columns);
-			console.log('set property for widths and columns', rows, columns);
+			console.log('set property for widths and columns', rows, columns, startGridAnimation);
 		} catch (error) {
 			console.log('lol');
 		}
@@ -54,6 +54,14 @@
 			console.log(index, 'even');
 		}
 		console.log('grid started');
+		const tileCount = document.getElementsByClassName('tile').length;
+		console.log(tileCount, rows * columns);
+
+		// while (tileCount != rows * columns) {
+		// 	setTimeout(() => {
+		// 		console.log(tileCount, rows * columns);
+		// 	}, 10);
+		// }
 		anime({
 			targets: '.tile', // thing to animate
 			opacity: 0,
@@ -72,12 +80,10 @@
 			}
 		});
 	};
-	let isMounted = false;
-	onMount(() => (isMounted = true));
-	$: {
-		console.log('tried to load animation');
 
-		if (startGridAnimation && isMounted) {
+	$: {
+		console.log(`startGridAnimation: ${startGridAnimation}, `);
+		if (startGridAnimation) {
 			loadAnimation();
 		}
 	}

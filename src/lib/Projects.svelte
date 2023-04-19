@@ -1,32 +1,9 @@
 <script lang="ts">
 	import Card from '$lib/Card.svelte';
-	import { projectInfo } from '$lib/stores';
+	import { cardData } from '$lib/stores';
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
-	let cardData = [
-		{
-			title: 'CM project',
-			description:
-				'A forum website which is focused on questions that are environmentally related.',
-			link: 'https://github.com/AloneTotally/cmproject-reMake'
-		},
-		{
-			title: 'Rebot',
-			description:
-				'A website used to help the ease of communication between the ICT helpdesk and the students in a school (Not done)'
-		},
-		{
-			title: 'Foodie',
-			description:
-				'My Secondary 4 computing+ coursework, which helps you decide what to eat judging by the locations near you',
-			link: 'https://github.com/AloneTotally/JSAcompcoursework2023'
-		},
-		{
-			title: 'This portfolio website :D',
-			description: 'My portfolio website'
-		}
-	];
-	const handleClick = (e: MouseEvent, title: string, description: string) => {
+	const handleClick = (e: MouseEvent, title: string) => {
 		let loadIndex = 0;
 		let columns = Math.floor(window.innerHeight / 60);
 		let rows = Math.floor((window.innerWidth - 5) / 60);
@@ -37,16 +14,11 @@
 		console.log(`(${row} - 1) * ${rows} + ${column} = ${loadIndex}`);
 		console.log(loadIndex);
 
-		$projectInfo = {
-			title: title,
-			description: description
-		};
-		console.log($projectInfo);
-
 		// goto(`${title}`);
 
 		dispatch('cardclicked', {
-			loadIndex: loadIndex
+			loadIndex: loadIndex,
+			title: title
 		});
 		console.log('event dispatched');
 	};
@@ -57,11 +29,12 @@
 	<span class="text-slate-400 mb-16">My projects</span>
 	<div class="grid grid-cols-3 gap-3 w-10/12">
 		<!-- TODO: THIS PART NOT FINISHED -->
-		{#each cardData as card}
+		{#each Object.values(cardData) as card}
 			<Card
 				title={card.title}
 				description={card.description}
-				on:click={(e) => handleClick(e, card.title, card.description)}
+				photoURL={card.photoURLs[0][0].slice(3)}
+				on:click={(e) => handleClick(e, card.title)}
 			/>
 		{/each}
 	</div>

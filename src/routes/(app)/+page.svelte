@@ -7,7 +7,6 @@
 	import { fade } from 'svelte/transition';
 	import Competitions from '$lib/Competitions.svelte';
 	import { goto } from '$app/navigation';
-	import { projectInfo } from '$lib/stores';
 
 	let rows = 0;
 	let columns = 0;
@@ -19,7 +18,7 @@
 		console.log(loadIndex);
 		startGridAnimation = false;
 		setTimeout(() => {
-			goto(`${$projectInfo.title}`);
+			goto(`${e.detail.title}`);
 		}, 1000);
 	};
 	const setRowsColumns = () => {
@@ -31,7 +30,6 @@
 	onMount(() => {
 		setRowsColumns();
 		const loading = document.getElementById('loading');
-		const loadingWrapper = document.getElementById('loading-wrapper');
 		loading?.addEventListener('animationiteration', () => {
 			startGridAnimation = true;
 		});
