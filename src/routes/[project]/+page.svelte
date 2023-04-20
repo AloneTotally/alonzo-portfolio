@@ -89,7 +89,7 @@
 			<div class="mt-5 mr-5">{projectInfo.description}</div>
 			<ul class="flex flex-row gap-2 flex-wrap mt-5">
 				{#each projectInfo.technologies as tech}
-					<li class="text-gray-400 font-semibold">#{tech}</li>
+					<li class="text-gray-400 font-light font-mono text-sm">{tech}</li>
 				{/each}
 			</ul>
 			<div class="flex flex-row mt-5">

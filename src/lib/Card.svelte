@@ -2,6 +2,7 @@
 	export let title: string;
 	export let description: string;
 	export let photoURL: string;
+	export let technologies: string[];
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -14,4 +15,9 @@
 	<p class="text-white max-w-fit ml-3 mt-2">
 		{description}
 	</p>
+	<ul class="flex flex-row gap-2 flex-wrap mt-5 mx-3">
+		{#each technologies as tech}
+			<li class="text-gray-400 font-light font-mono text-xs">{tech}</li>
+		{/each}
+	</ul>
 </div>

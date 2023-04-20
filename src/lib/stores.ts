@@ -8,8 +8,8 @@ export const projectInfo: Writable<{
 });
 
 export const cardData = {
-	'2023 portfolio website': {
-		title: '2023 portfolio website',
+	'2023 Portfolio website': {
+		title: '2023 Portfolio website',
 		date: '2023',
 		description: 'My current portfolio website (The one you are looking at right now)',
 		link: 'https://github.com/AloneTotally/alonzo-portfolio',
