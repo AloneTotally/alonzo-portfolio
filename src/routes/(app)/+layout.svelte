@@ -1,5 +1,6 @@
 <script>
 	import '../../app.css';
+	const nav = ['Projects', 'Education', 'Competitions', 'Certificates'];
 </script>
 
 <slot />
@@ -17,17 +18,13 @@
 		>
 	</div>
 	<div class="flex gap-10 items-center ml-auto pr-10 font-medium text-slate-400">
-		<div class="flex flex-col h-full relative">
-			<a class=" hover:text-white transition-all duration-300 wrapper" href="#projects">Projects</a>
-		</div>
-		<div class="flex flex-col h-full relative">
-			<a class=" hover:text-white transition-all duration-300 wrapper" href="#roadmap">Education</a>
-		</div>
-		<div class="flex flex-col h-full relative">
-			<a class=" hover:text-white transition-all duration-300 wrapper" href="#competitions"
-				>Competitions</a
-			>
-		</div>
+		{#each nav as navitem}
+			<div class="flex flex-col h-full relative">
+				<a class=" hover:text-white transition-all duration-300 wrapper" href="#{navitem}">
+					{navitem}
+				</a>
+			</div>
+		{/each}
 	</div>
 </nav>
 

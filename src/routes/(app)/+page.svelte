@@ -3,9 +3,11 @@
 	import Projects from '$lib/Projects.svelte';
 	import Grid from '$lib/Grid.svelte';
 	import Education from '$lib/Education.svelte';
+	import Competitions from '$lib/Competitions.svelte';
+	import Certificates from '$lib/Certificates.svelte';
+
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import Competitions from '$lib/Competitions.svelte';
 	import { goto } from '$app/navigation';
 
 	let rows = 0;
@@ -89,6 +91,7 @@
 	<Projects on:cardclicked={(e) => handleCardClicked(e)} />
 	<Education />
 	<Competitions />
+	<Certificates />
 </body>
 
 <style>

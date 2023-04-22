@@ -95,7 +95,7 @@
 			<div class="flex flex-row mt-5">
 				<a
 					class="bg-indigo-600 duration-300 hover:bg-indigo-500 px-3 py-1 rounded-md w-fit flex flex-row items-center gap-1"
-					href={projectInfo.link}
+					href={projectInfo.githubLink}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

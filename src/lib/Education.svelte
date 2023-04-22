@@ -28,7 +28,7 @@
 
 <div
 	class="text-white flex flex-col items-center justify-center text-lg w-full scroll-mt-10"
-	id="roadmap"
+	id="Education"
 >
 	<h2 class="font-extrabold text-4xl mt-10">Education</h2>
 	<span class="text-slate-400 mb-16">A timeline of my education</span>
