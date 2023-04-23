@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Modal from '$lib/Modal.svelte';
+	import { fade, fly } from 'svelte/transition';
 
-	const certificates = {
+	const compCerts = {
 		'bebras-2022': {
 			name: 'Bebras Computational Thinking Challenge 2022',
 			photoURL: '../../../src/lib/assets/cert-pics/bebras-2022.png',
@@ -25,7 +26,9 @@
 			photoURL: '../../../src/lib/assets/cert-pics/drct-global-finals-2021.jpg',
 			caption: 'Silver',
 			link: 'https://www.internationalolympiadacademy.com/olympiads/drct-design-thinking-with-robotics-and-computational-thinking'
-		},
+		}
+	};
+	const courseCerts = {
 		'sololearn-go': {
 			name: 'Sololearn - Go',
 			photoURL: '../../../src/lib/assets/cert-pics/sololearn-go.png',
@@ -43,13 +46,32 @@
 			photoURL: '../../../src/lib/assets/cert-pics/sololearn-python.png',
 			caption: 'Sololearn Course',
 			link: 'https://www.sololearn.com/profile/25425602'
+		},
+		'cybersecurity-essentials': {
+			name: 'Cybersecurity Essentials',
+			photoURL: '../../../src/lib/assets/cert-pics/cybersecurity-essentials.png',
+			caption: 'Certificate of completion',
+			link: 'https://www.netacad.com/courses/cybersecurity/cybersecurity-essentials'
 		}
+	};
+	const certs = {
+		All: { ...courseCerts, ...compCerts },
+		Courses: courseCerts,
+		Competitions: compCerts
 	};
 	let modalPhoto = '';
 	let showModal: boolean = false;
 	const handleClick = (photoURL: string) => {
 		showModal = true;
 		modalPhoto = photoURL;
+	};
+
+	const sortNav = ['All', 'Courses', 'Competitions'];
+	let currentGallery = certs.All;
+	let currentNavItem = 'All';
+	const sortCerts = (navItem: string) => {
+		currentGallery = certs[navItem];
+		currentNavItem = navItem;
 	};
 </script>
 
@@ -59,18 +81,34 @@
 	</Modal>
 	<h2 class="font-extrabold text-4xl mt-10">Certificates</h2>
 	<span class="text-slate-400 mb-16">Certificates from competitions or courses</span>
+	<div class="flex flex-row justify-start gap-10 w-10/12 mb-10">
+		{#each sortNav as navItem}
+			<button
+				class="text-slate-400 hover:text-white transition-all duration-300 font-medium"
+				on:click={() => sortCerts(navItem)}
+				class:text-indigo-500={navItem == currentNavItem}>{navItem}</button
+			>
+		{/each}
+	</div>
 	<div class="grid grid-cols-3 gap-3 w-10/12">
-		{#each Object.values(certificates) as cert}
+		<!-- TODO: Add 'show more' feature -->
+		{#each Object.values(currentGallery) as cert}
 			<button
 				class=" bg-gray-800 text-left flex flex-col pb-5 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-300 cursor-pointer card"
+				transition:fly
 			>
 				<button on:click={() => handleClick(cert.photoURL)} class="relative photo">
 					<img src={cert.photoURL} alt="" class="w-full h-auto rounded-t-xl" />
 				</button>
 				<!-- <p class="absolute top-1/2 right-1/2 z-20">View image</p> -->
-				<h3 class="text-white text-xl font-semibold mx-3 mt-3 transition-colors duration-500 title">
+				<a
+					href={cert.link}
+					class="text-white text-xl font-semibold mx-3 mt-3 transition-colors duration-500 title hover:text-indigo-400"
+					target="_blank"
+					rel="external"
+				>
 					{cert.name}
-				</h3>
+				</a>
 				<p class="text-base font-medium ml-3 text-slate-400">{cert.caption}</p>
 			</button>
 		{/each}

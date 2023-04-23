@@ -64,7 +64,7 @@
 		</div>
 		<a
 			class="px-7 py-4 bg-slate-800 my-10 text-lg font-light hover:bg-slate-700 w-fit"
-			href="#projects">View my stuff &darr;</a
+			href="#Projects">View my stuff &darr;</a
 		>
 	</div>
 

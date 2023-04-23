@@ -1,11 +1,29 @@
-<script>
+<script lang="ts">
 	import '../../app.css';
 	const nav = ['Projects', 'Education', 'Competitions', 'Certificates'];
+	function isInViewport(element: HTMLElement) {
+		const rect = element.getBoundingClientRect();
+		return rect.bottom >= 100;
+	}
+	let elementInView = '';
+	const checkElementInView = () => {
+		for (let i = 0; i < nav.length; i++) {
+			const element = document.getElementById(nav[i]);
+
+			if (isInViewport(element)) {
+				elementInView = nav[i];
+				console.log(elementInView);
+
+				break;
+			}
+		}
+	};
 </script>
 
 <slot />
+<svelte:document on:scroll={checkElementInView} />
 <nav
-	class="bg-slate-700 w-screen fixed top-0 h-16 text-white flex items-center px-5 justify-between"
+	class="bg-slate-800 w-screen fixed top-0 h-16 text-white flex items-center px-5 justify-between"
 >
 	<div>
 		<button
@@ -20,7 +38,11 @@
 	<div class="flex gap-10 items-center ml-auto pr-10 font-medium text-slate-400">
 		{#each nav as navitem}
 			<div class="flex flex-col h-full relative">
-				<a class=" hover:text-white transition-all duration-300 wrapper" href="#{navitem}">
+				<a
+					class=" hover:text-white transition-all duration-300 wrapper"
+					class:text-indigo-400={elementInView == navitem}
+					href="#{navitem}"
+				>
 					{navitem}
 				</a>
 			</div>
