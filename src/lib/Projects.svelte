@@ -32,7 +32,7 @@
 		{#each Object.values(cardData) as card}
 			<Card
 				title={card.title}
-				description={card.description}
+				description={card.previewDescription}
 				photoURL={card.photoURLs[0][0].slice(3)}
 				technologies={card.technologies}
 				on:click={(e) => handleClick(e, card.title)}

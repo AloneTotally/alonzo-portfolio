@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../../app.css';
-	const nav = ['Projects', 'Education', 'Competitions', 'Certificates'];
+	const nav = ['Projects', 'Education', 'Competitions', 'Certificates', 'Contacts'];
 	function isInViewport(element: HTMLElement) {
 		const rect = element.getBoundingClientRect();
 		return rect.bottom >= 100;

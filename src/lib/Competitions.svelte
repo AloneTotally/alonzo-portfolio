@@ -4,7 +4,11 @@
 		{
 			header: '2023',
 			pointsHeader: 'Competitions',
-			points: [''],
+			points: [
+				'Perse Coding Team Challenge (Round 1)',
+				'IMMC 2023',
+				'Perse Coding Team Challenge (Final Round)'
+			],
 			timePeriod: ''
 		},
 		{
@@ -18,6 +22,25 @@
 				'Perse Coding Team Challenge (Final Round)',
 				'Australian Informatics Olympiad',
 				'International Bebras Challenge'
+			],
+			timePeriod: ''
+		},
+		{
+			header: '2021',
+			pointsHeader: 'Competitions',
+			points: [
+				'Design Thinking with Robotics and Computational Thinking',
+				'Script It Right Chinese Radio Drama Script Writing Competition'
+			],
+			timePeriod: ''
+		},
+		{
+			header: '2020',
+			pointsHeader: 'Competitions',
+			points: [
+				'Singapore and Asian Schools Math Olympiad',
+				'Computational and Algorithmic Thinking (CAT)',
+				'Oxford University Computing Challenge (Challenge Round)'
 			],
 			timePeriod: ''
 		}

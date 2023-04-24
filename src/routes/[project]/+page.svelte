@@ -15,7 +15,7 @@
 	// console.log(name);
 	const projectInfo = cardData[name];
 	const index = Object.keys(cardData).indexOf(projectInfo.title);
-	const filepath = `../../../src/lib/assets/${name}.jpg`.toString();
+	const filepath = `../../../src/lib/assets/projects/${name}.jpg`.toString();
 	// console.log(filepath);
 
 	var startGridAnimation = false;
