@@ -1,11 +1,5 @@
-<script context="module">
-	import { get } from 'svelte/store';
-	import { cardData } from '$lib/stores';
-	console.log('this runs before loading a project');
-	console.log(cardData);
-</script>
-
 <script>
+	import { cardData } from '$lib/stores';
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
@@ -13,8 +7,10 @@
 	const name = $page.params.project;
 
 	// console.log(name);
+	const numProjects = Object.keys(cardData).length;
+	// @ts-ignore
 	const projectInfo = cardData[name];
-	const index = Object.keys(cardData).indexOf(projectInfo.title);
+	const index = numProjects - Object.keys(cardData).indexOf(projectInfo.title);
 	const filepath = `../../../src/lib/assets/projects/${name}.jpg`.toString();
 	// console.log(filepath);
 
@@ -48,10 +44,10 @@
 		</div>
 		<div class="right-0 fixed w-4/12 pl-10">
 			<div class="flex flex-row justify-between mt-5 -ml-5 mr-5">
-				{#if index > 0}
+				{#if index > 1}
 					<a
 						rel="external"
-						href={Object.keys(cardData)[index - 1]}
+						href={Object.keys(cardData)[numProjects - index + 1]}
 						class="flex flex-col justify-center items-center popupwrapper"
 					>
 						<p>&leftarrow;</p>
@@ -73,10 +69,10 @@
 					</svg>
 					<p class="text-xs popup transition-all duration-300">Back to home</p>
 				</a>
-				{#if index < Object.keys(cardData).length - 1}
+				{#if index < Object.keys(cardData).length}
 					<a
 						rel="external"
-						href={Object.keys(cardData)[index + 1]}
+						href={Object.keys(cardData)[numProjects - index - 1]}
 						class="flex flex-col justify-center items-center popupwrapper"
 					>
 						<p>&rightarrow;</p>

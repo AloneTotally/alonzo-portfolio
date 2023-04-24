@@ -17,19 +17,6 @@ export const cardData = {
 		technologies: ['Sveltekit', 'Tailwind', 'HTML', 'CSS', 'Typescript'],
 		photoURLs: [['../../../src/lib/assets/projects/Portfolio.png', 'Starting screen']]
 	},
-	'SUTD-NP-SST Big D Camp Project': {
-		title: 'SUTD-NP-SST Big D Camp Project',
-		date: '2023',
-		previewDescription: 'A proof-of-concept of an elevator that would stop during earthquakes',
-		description: 'A proof-of-concept of an elevator that would stop during earthquakes',
-		githubLink: '',
-		technologies: ['Hardware', 'Arduino', 'C++'],
-		photoURLs: [
-			['../../../src/lib/assets/projects/Big-D-Project.png', 'Project'],
-			['../../../src/lib/assets/projects/Big-D-Project1.png', 'Labelled Project'],
-			['../../../src/lib/assets/projects/Big-D-Project2.png', 'Project on Tinkercad']
-		]
-	},
 	Foodie: {
 		title: 'Foodie',
 		date: '2023',
@@ -44,6 +31,20 @@ export const cardData = {
 			['../../../src/lib/assets/projects/Foodie1.png', 'View Location page'],
 			['../../../src/lib/assets/projects/Foodie2.png', 'Reviews page'],
 			['../../../src/lib/assets/projects/Foodie3.png', 'History page']
+		]
+	},
+	'SUTD-NP-SST Big D Camp Project': {
+		title: 'SUTD-NP-SST Big D Camp Project',
+		date: '2023',
+		previewDescription: 'A proof-of-concept of an elevator that would stop during earthquakes',
+		description: 'A proof-of-concept of an elevator that would stop during earthquakes',
+		githubLink: 'https://github.com/AloneTotally/grp3-big-D-2023',
+		technologies: ['Hardware', 'Arduino', 'C++'],
+		photoURLs: [
+			['../../../src/lib/assets/projects/Big-D-Project.png', 'Project'],
+			['../../../src/lib/assets/projects/Big-D-Project1.png', 'Labelled Project'],
+			['../../../src/lib/assets/projects/Big-D-Project2.png', 'Project flowchart'],
+			['../../../src/lib/assets/projects/Big-D-Project3.png', 'Project on Tinkercad']
 		]
 	},
 	Rebot: {
