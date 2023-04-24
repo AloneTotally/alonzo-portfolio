@@ -9,6 +9,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
+	import Contacts from '$lib/Contacts.svelte';
 
 	let rows = 0;
 	let columns = 0;
@@ -92,6 +93,7 @@
 	<Education />
 	<Competitions />
 	<Certificates />
+	<Contacts />
 </body>
 
 <style>
