@@ -15,7 +15,7 @@ export const cardData = {
 		description: 'My current portfolio website (The one you are looking at right now)',
 		githubLink: 'https://github.com/AloneTotally/alonzo-portfolio',
 		technologies: ['Sveltekit', 'Tailwind', 'HTML', 'CSS', 'Typescript'],
-		photoURLs: [['../../../src/lib/assets/projects/Portfolio.png', 'Starting screen']]
+		photoURLs: [['../../projects/Portfolio.png', 'Starting screen']]
 	},
 	Foodie: {
 		title: 'Foodie',
@@ -27,10 +27,10 @@ export const cardData = {
 		githubLink: 'https://github.com/AloneTotally/JSAcompcoursework2023',
 		technologies: ['Kivy', 'KivyMD', 'Python3'],
 		photoURLs: [
-			['../../../src/lib/assets/projects/Foodie.png', 'Homepage'],
-			['../../../src/lib/assets/projects/Foodie1.png', 'View Location page'],
-			['../../../src/lib/assets/projects/Foodie2.png', 'Reviews page'],
-			['../../../src/lib/assets/projects/Foodie3.png', 'History page']
+			['../../projects/Foodie.png', 'Homepage'],
+			['../../projects/Foodie1.png', 'View Location page'],
+			['../../projects/Foodie2.png', 'Reviews page'],
+			['../../projects/Foodie3.png', 'History page']
 		]
 	},
 	'SUTD-NP-SST Big D Camp Project': {
@@ -41,10 +41,10 @@ export const cardData = {
 		githubLink: 'https://github.com/AloneTotally/grp3-big-D-2023',
 		technologies: ['Hardware', 'Arduino', 'C++'],
 		photoURLs: [
-			['../../../src/lib/assets/projects/Big-D-Project.png', 'Project'],
-			['../../../src/lib/assets/projects/Big-D-Project1.png', 'Labelled Project'],
-			['../../../src/lib/assets/projects/Big-D-Project2.png', 'Project flowchart'],
-			['../../../src/lib/assets/projects/Big-D-Project3.png', 'Project on Tinkercad']
+			['../../projects/Big-D-Project.png', 'Project'],
+			['../../projects/Big-D-Project1.png', 'Labelled Project'],
+			['../../projects/Big-D-Project2.png', 'Project flowchart'],
+			['../../projects/Big-D-Project3.png', 'Project on Tinkercad']
 		]
 	},
 	Rebot: {
@@ -57,11 +57,8 @@ export const cardData = {
 		githubLink: 'https://github.com/snyperf1/WeShaalHelp',
 		technologies: ['Sveltekit', 'Tailwind', 'HTML', 'CSS', 'Typescript'],
 		photoURLs: [
-			[
-				'../../../src/lib/assets/projects/Rebot.png',
-				'Section of Admin Homepage (All placeholders)'
-			],
-			['../../../src/lib/assets/projects/Rebot1.png', 'Full Admin Homepage (All placeholders)']
+			['../../projects/Rebot.png', 'Section of Admin Homepage (All placeholders)'],
+			['../../projects/Rebot1.png', 'Full Admin Homepage (All placeholders)']
 		]
 	},
 	reMake: {
@@ -74,8 +71,8 @@ export const cardData = {
 		githubLink: 'https://github.com/AloneTotally/cmproject-reMake',
 		technologies: ['HTML', 'CSS', 'Javascript'],
 		photoURLs: [
-			['../../../src/lib/assets/projects/reMake.png', 'Feed'],
-			['../../../src/lib/assets/projects/reMake1.png', 'Posting question page']
+			['../../projects/reMake.png', 'Feed'],
+			['../../projects/reMake1.png', 'Posting question page']
 		]
 	}
 };

@@ -1,7 +1,3 @@
-<script>
-	import Profile from '$lib/assets/myself.jpg';
-</script>
-
 <div class="bg-indigo-600 flex justify-center items-center flex-row" id="hiddencontent">
 	<div class="flex justify-center flex-col xl:pl-56 md:pl-10" id="aboutme">
 		<div class="text-5xl font-bold w-full">Hi, I am Alonzo Puah</div>
@@ -18,7 +14,7 @@
 	</div>
 
 	<div class="min-h-screen flex items-center justify-center xl:pr-56 sm:pr-10">
-		<img class="rounded-full h-auto w-3/4" src={Profile} alt="" />
+		<img class="rounded-full h-auto w-3/4" src="../../myself.jpg" alt="" />
 	</div>
 </div>
 

@@ -5,25 +5,25 @@
 	const compCerts = {
 		'bebras-2022': {
 			name: 'Bebras Computational Thinking Challenge 2022',
-			photoURL: '../../../src/lib/assets/cert-pics/bebras-2022.png',
+			photoURL: '../../cert-pics/bebras-2022.png',
 			caption: 'Honorable mention',
 			link: 'https://www.bebraschallenge.org/'
 		},
 		'perse-2022': {
 			name: 'Perse Coding Team Challenge 2022',
-			photoURL: '../../../src/lib/assets/cert-pics/perse-2022.png',
+			photoURL: '../../cert-pics/perse-2022.png',
 			caption: 'Merit',
 			link: 'https://pctc.perse.co.uk/'
 		},
 		'perse-2023': {
 			name: 'Perse Coding Team Challenge 2023',
-			photoURL: '../../../src/lib/assets/cert-pics/perse-2023.png',
+			photoURL: '../../cert-pics/perse-2023.png',
 			caption: 'Distinction',
 			link: 'https://pctc.perse.co.uk/'
 		},
 		'drct-global-finals-2021': {
 			name: 'Design Thinking with Robotics and Computational Thinking Global Finals 2021',
-			photoURL: '../../../src/lib/assets/cert-pics/drct-global-finals-2021.jpg',
+			photoURL: '../../cert-pics/drct-global-finals-2021.jpg',
 			caption: 'Silver',
 			link: 'https://www.internationalolympiadacademy.com/olympiads/drct-design-thinking-with-robotics-and-computational-thinking'
 		}
@@ -31,25 +31,25 @@
 	const courseCerts = {
 		'sololearn-go': {
 			name: 'Sololearn - Go',
-			photoURL: '../../../src/lib/assets/cert-pics/sololearn-go.png',
+			photoURL: '../../cert-pics/sololearn-go.png',
 			caption: 'Sololearn Course',
 			link: 'https://www.sololearn.com/profile/25425602'
 		},
 		// 'sololearn-machinelearning': {
 		// 	name: 'Sololearn - Machine Learning',
-		// 	photoURL: '../../../src/lib/assets/cert-pics/sololearn-machinelearning.png',
+		// 	photoURL: '../../cert-pics/sololearn-machinelearning.png',
 		// 	caption: 'Sololearn Course',
 		// 	link: 'https://www.sololearn.com/profile/25425602'
 		// },
 		'sololearn-python': {
 			name: 'Sololearn - Intermediate Python',
-			photoURL: '../../../src/lib/assets/cert-pics/sololearn-python.png',
+			photoURL: '../../cert-pics/sololearn-python.png',
 			caption: 'Sololearn Course',
 			link: 'https://www.sololearn.com/profile/25425602'
 		},
 		'cybersecurity-essentials': {
 			name: 'Cybersecurity Essentials',
-			photoURL: '../../../src/lib/assets/cert-pics/cybersecurity-essentials.png',
+			photoURL: '../../cert-pics/cybersecurity-essentials.png',
 			caption: 'Certificate of completion',
 			link: 'https://www.netacad.com/courses/cybersecurity/cybersecurity-essentials'
 		}
