@@ -23,16 +23,16 @@
 <slot />
 <svelte:document on:scroll={checkElementInView} />
 <nav
-	class="bg-slate-800 w-screen fixed top-0 h-16 text-white flex items-center px-5 justify-between"
+	class="bg-slate-900 w-screen fixed top-0 h-20 text-white flex items-center px-5 justify-between border-gray-700 border-b"
 >
-	<div>
+	<div class="flex flex-row">
 		<button
 			on:click={() =>
 				window.scroll({
 					top: 0,
 					left: 0,
 					behavior: 'smooth'
-				})}>Alonzo Puah</button
+				})}><img class=" w-16 h-auto" src="../../favicon.png" alt="Alonzo Puah" /></button
 		>
 	</div>
 	<div class="flex gap-10 items-center ml-auto pr-10 font-medium text-slate-400">
