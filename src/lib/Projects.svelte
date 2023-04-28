@@ -27,7 +27,7 @@
 <div class="text-white flex flex-col items-center text-lg scroll-mt-10" id="Projects">
 	<h2 class="font-extrabold text-4xl mt-10">Projects</h2>
 	<span class="text-slate-400 mb-16">My projects</span>
-	<div class="grid grid-cols-3 gap-3 w-10/12">
+	<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 w-10/12">
 		<!-- TODO: THIS PART NOT FINISHED -->
 		{#each Object.values(cardData) as card}
 			<Card

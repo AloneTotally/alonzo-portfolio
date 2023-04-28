@@ -41,7 +41,7 @@
 			<div class="flex flex-col justify-start items-start">
 				<div class="flex flex-row w-1/2 items-stretch ml-14 justify-end">
 					<div class="flex flex-col max-w-5/12 mr-10 mt-10">
-						<div class="font-bold text-2xl">{element.header}</div>
+						<div class="font-bold md:text-2xl text-xl">{element.header}</div>
 						<div class="font-bold text-slate-400">{element.timePeriod}</div>
 
 						{#if element.points.length > 0}

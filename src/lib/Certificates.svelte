@@ -90,7 +90,7 @@
 			>
 		{/each}
 	</div>
-	<div class="grid grid-cols-3 gap-3 w-10/12">
+	<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 w-10/12">
 		<!-- TODO: Add 'show more' feature -->
 		{#each Object.values(currentGallery) as cert}
 			<button

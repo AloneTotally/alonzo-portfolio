@@ -35,7 +35,7 @@
 				})}><img class=" w-16 h-auto" src="../../favicon.png" alt="Alonzo Puah" /></button
 		>
 	</div>
-	<div class="flex gap-10 items-center ml-auto pr-10 font-medium text-slate-400">
+	<div class="md:flex gap-10 items-center ml-auto pr-10 font-medium text-slate-400 hidden">
 		{#each nav as navitem}
 			<div class="flex flex-col h-full relative">
 				<a

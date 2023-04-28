@@ -47,7 +47,7 @@
 </script>
 
 <svelte:head>
-	<meta property="og:image" content="https://alonzo-portfolio.vercel.app/projects/Portfolio.png" />
+	<meta property="og:image" content="https://alonzo-portfolio.vercel.app/preview.png" />
 	<meta property="og:title" content="Alonzo's Portfolio - A student at SST" />
 	<meta property="og:type" content="website" />
 	<meta
