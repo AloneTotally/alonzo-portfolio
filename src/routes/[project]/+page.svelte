@@ -21,6 +21,13 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Alonzo's project - {name}</title>
+	<meta property="og:title" content="Alonzo's project - {name}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content={projectInfo.previewDescription} />
+</svelte:head>
+
 <body class="bg-slate-900">
 	<div class="bottom-10 right-10 fixed text-slate-500 font-medium">
 		{'Project #' + (index.toString().length == 1 ? '0' + index.toString() : index)}

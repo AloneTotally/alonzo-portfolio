@@ -46,6 +46,16 @@
 	} catch (error) {}
 </script>
 
+<svelte:head>
+	<meta property="og:image" content="../../../static/projects/Portfolio.png" />
+	<meta property="og:title" content="Alonzo's Portfolio - A student at SST" />
+	<meta property="og:type" content="website" />
+	<meta
+		property="og:description"
+		content="I am an SST student, a self-taught website developer and designer"
+	/>
+</svelte:head>
+
 <body class="bg-slate-900 flex flex-col justify-center content-center text-white">
 	{#if !startGridAnimation}
 		<div
