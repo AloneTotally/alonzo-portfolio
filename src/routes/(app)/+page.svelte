@@ -56,7 +56,7 @@
 	/>
 </svelte:head>
 
-<body class="bg-slate-900 flex flex-col justify-center content-center text-white">
+<main class="bg-slate-900 flex flex-col justify-center content-center text-white">
 	{#if !startGridAnimation}
 		<div
 			class="loading-wrapper z-20 bg-slate-900 flex justify-center items-center"
@@ -104,7 +104,7 @@
 	<Competitions />
 	<Certificates />
 	<Contacts />
-</body>
+</main>
 
 <style>
 	.custom-shape-divider-bottom-1681473540 {

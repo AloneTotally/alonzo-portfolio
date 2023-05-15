@@ -27,7 +27,7 @@
 </script>
 
 <div
-	class="text-white flex flex-col items-center justify-center text-lg w-full scroll-mt-10"
+	class="text-white flex flex-col items-center justify-center text-lg w-full scroll-mt-12"
 	id="Education"
 >
 	<h2 class="font-extrabold text-4xl mt-10">Education</h2>

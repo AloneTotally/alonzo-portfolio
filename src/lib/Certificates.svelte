@@ -1,13 +1,37 @@
 <script lang="ts">
 	import Modal from '$lib/Modal.svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 
 	const compCerts = {
+		'aio-2022': {
+			name: 'Australian Informatics Olympiad 2022',
+			photoURL: '../../cert-pics/aio-2022.JPG',
+			caption: 'Bronze',
+			link: 'https://aio.edu.au/'
+		},
 		'bebras-2022': {
 			name: 'Bebras Computational Thinking Challenge 2022',
 			photoURL: '../../cert-pics/bebras-2022.png',
 			caption: 'Honorable mention',
 			link: 'https://www.bebraschallenge.org/'
+		},
+		'cat-2022': {
+			name: 'Computational And Algorithmic Thinking 2021',
+			photoURL: '../../cert-pics/cat-2022.JPG',
+			caption: 'Participation',
+			link: 'https://www.amt.edu.au/cat'
+		},
+		'drct-2021': {
+			name: 'Design Thinking with Robotics and Computational Thinking 2021',
+			photoURL: '../../cert-pics/drct-2021.JPG',
+			caption: 'Gold',
+			link: 'https://www.internationalolympiadacademy.com/olympiads/drct-design-thinking-with-robotics-and-computational-thinking'
+		},
+		'drct-global-finals-2021': {
+			name: 'Design Thinking with Robotics and Computational Thinking Global Finals 2021',
+			photoURL: '../../cert-pics/drct-global-finals-2021.jpg',
+			caption: 'Silver',
+			link: 'https://smo-testing.com/drctfinals/'
 		},
 		'perse-2022': {
 			name: 'Perse Coding Team Challenge 2022',
@@ -20,15 +44,15 @@
 			photoURL: '../../cert-pics/perse-2023.png',
 			caption: 'Distinction',
 			link: 'https://pctc.perse.co.uk/'
-		},
-		'drct-global-finals-2021': {
-			name: 'Design Thinking with Robotics and Computational Thinking Global Finals 2021',
-			photoURL: '../../cert-pics/drct-global-finals-2021.jpg',
-			caption: 'Silver',
-			link: 'https://www.internationalolympiadacademy.com/olympiads/drct-design-thinking-with-robotics-and-computational-thinking'
 		}
 	};
 	const courseCerts = {
+		'cybersecurity-essentials': {
+			name: 'Cybersecurity Essentials',
+			photoURL: '../../cert-pics/cybersecurity-essentials.png',
+			caption: 'Certificate of completion',
+			link: 'https://www.netacad.com/courses/cybersecurity/cybersecurity-essentials'
+		},
 		'sololearn-go': {
 			name: 'Sololearn - Go',
 			photoURL: '../../cert-pics/sololearn-go.png',
@@ -46,12 +70,6 @@
 			photoURL: '../../cert-pics/sololearn-python.png',
 			caption: 'Sololearn Course',
 			link: 'https://www.sololearn.com/profile/25425602'
-		},
-		'cybersecurity-essentials': {
-			name: 'Cybersecurity Essentials',
-			photoURL: '../../cert-pics/cybersecurity-essentials.png',
-			caption: 'Certificate of completion',
-			link: 'https://www.netacad.com/courses/cybersecurity/cybersecurity-essentials'
 		}
 	};
 	const certs = {
@@ -70,35 +88,45 @@
 	let currentGallery = certs.All;
 	let currentNavItem = 'All';
 	const sortCerts = (navItem: string) => {
+		showMore = false;
 		currentGallery = certs[navItem];
 		currentNavItem = navItem;
 	};
+	let showMore = false;
+	$: showing = showMore
+		? Object.values(currentGallery)
+		: Object.values(currentGallery).splice(0, 6);
 </script>
 
-<div class="text-white flex flex-col items-center text-lg scroll-mt-10" id="Certificates">
+<div class="text-white flex flex-col items-center text-lg scroll-mt-12" id="Certificates">
 	<Modal bind:showModal>
 		<img src={modalPhoto} alt="" class="h-5/6 w-auto" />
 	</Modal>
 	<h2 class="font-extrabold text-4xl mt-10">Certificates</h2>
 	<span class="text-slate-400 mb-16">Certificates from competitions or courses</span>
-	<div class="flex flex-row justify-start gap-10 w-10/12 mb-10">
+	<div class="flex flex-row justify-start gap-10 w-10/12 mb-10 text-slate-400">
+		<!-- TODO: Change colour of options when selected -->
 		{#each sortNav as navItem}
 			<button
-				class="text-slate-400 hover:text-white transition-all duration-300 font-medium"
+				class=" transition-all duration-300 font-medium"
 				on:click={() => sortCerts(navItem)}
-				class:text-indigo-500={navItem == currentNavItem}>{navItem}</button
-			>
+				class:text-indigo-400={navItem == currentNavItem}
+				class:hover:text-white={navItem != currentNavItem}
+				>{navItem}
+			</button>
 		{/each}
 	</div>
 	<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 w-10/12">
-		<!-- TODO: Add 'show more' feature -->
-		{#each Object.values(currentGallery) as cert}
+		{#each showing as cert}
 			<button
 				class=" bg-gray-800 text-left flex flex-col pb-5 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-300 cursor-pointer card"
 				transition:fly
 			>
-				<button on:click={() => handleClick(cert.photoURL)} class="relative photo">
-					<img src={cert.photoURL} alt="" class="w-full h-auto rounded-t-xl" />
+				<button
+					on:click={() => handleClick(cert.photoURL)}
+					class="relative photo flex justify-center items-center w-full"
+				>
+					<img src={cert.photoURL} alt="" class="w-auto h-full max-h-72 rounded-t-xl" />
 				</button>
 				<!-- <p class="absolute top-1/2 right-1/2 z-20">View image</p> -->
 				<a
@@ -113,6 +141,12 @@
 			</button>
 		{/each}
 	</div>
+	{#if Object.values(currentGallery).length > 6}
+		<button
+			class="rounded-lg bg-indigo-500 text-white py-2 px-6 mt-10 transition-all duration-200"
+			on:click={() => (showMore = !showMore)}>{showMore ? 'Show less' : 'Show more'}</button
+		>
+	{/if}
 </div>
 
 <style>

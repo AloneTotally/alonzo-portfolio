@@ -7,11 +7,12 @@
 </script>
 
 <div class="flex flex-col justify-evenly bg-slate-950 contacts-wrapper mt-10">
-	<div class="text-white flex flex-col items-center text-lg scroll-mt-10" id="Contacts">
+	<div class="text-white flex flex-col items-center text-lg scroll-mt-12" id="Contacts">
 		<h2 class="font-extrabold text-4xl mt-10">My contacts</h2>
 		<span class="text-slate-400">Where you can find me at</span>
 	</div>
-	<div class="flex mt-10 justify-evenly mb-10">
+
+	<div class="flex flex-col gap-3 items-start pl-10 sm:pl-0 sm:flex-row mt-10 justify-evenly mb-10">
 		<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 		<a
 			href="https://github.com/AloneTotally"
