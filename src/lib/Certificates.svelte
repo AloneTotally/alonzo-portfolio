@@ -70,6 +70,12 @@
 			photoURL: '../../cert-pics/sololearn-python.png',
 			caption: 'Sololearn Course',
 			link: 'https://www.sololearn.com/profile/25425602'
+		},
+		'apple-teacher': {
+			name: 'Recognition as an Apple teacher',
+			photoURL: '../../cert-pics/apple-teacher.png',
+			caption: 'Certificate of recognition',
+			link: 'https://education.apple.com/en'
 		}
 	};
 	const certs = {
@@ -100,12 +106,11 @@
 
 <div class="text-white flex flex-col items-center text-lg scroll-mt-12" id="Certificates">
 	<Modal bind:showModal>
-		<img src={modalPhoto} alt="" class="h-5/6 w-auto" />
+		<img src={modalPhoto} alt="" class="max-h-5/6 w-auto" />
 	</Modal>
 	<h2 class="font-extrabold text-4xl mt-10">Certificates</h2>
 	<span class="text-slate-400 mb-16">Certificates from competitions or courses</span>
 	<div class="flex flex-row justify-start gap-10 w-10/12 mb-10 text-slate-400">
-		<!-- TODO: Change colour of options when selected -->
 		{#each sortNav as navItem}
 			<button
 				class=" transition-all duration-300 font-medium"
@@ -116,28 +121,35 @@
 			</button>
 		{/each}
 	</div>
-	<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 w-10/12">
+
+	<div class="lg:grid lg:grid-cols-3 flex-col gap-3 w-10/12">
 		{#each showing as cert}
 			<button
-				class=" bg-gray-800 text-left flex flex-col pb-5 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-300 cursor-pointer card"
+				class="bg-gray-800 text-left flex flex-row lg:flex-col pb-5 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-300 cursor-pointer card w-full"
 				transition:fly
 			>
 				<button
 					on:click={() => handleClick(cert.photoURL)}
-					class="relative photo flex justify-center items-center w-full"
+					class="relative photo flex justify-center items-center lg:w-full w-2/6 h-40"
 				>
-					<img src={cert.photoURL} alt="" class="w-auto h-full max-h-72 rounded-t-xl" />
+					<img
+						src={cert.photoURL}
+						alt=""
+						class="lg:w-auto lg:h-full lg:max-h-60 w-auto max-h-full rounded-t-xl"
+					/>
 				</button>
-				<!-- <p class="absolute top-1/2 right-1/2 z-20">View image</p> -->
-				<a
-					href={cert.link}
-					class="text-white text-xl font-semibold mx-3 mt-3 transition-colors duration-500 title hover:text-indigo-400"
-					target="_blank"
-					rel="external"
-				>
-					{cert.name}
-				</a>
-				<p class="text-base font-medium ml-3 text-slate-400">{cert.caption}</p>
+				<div class="flex flex-col gap-1 w-7/12">
+					<a
+						href={cert.link}
+						class="text-white md:text-xl text-lg font-semibold mx-3 mt-3 transition-colors duration-500 title hover:text-indigo-400 w-full"
+						target="_blank"
+						rel="external"
+					>
+						{cert.name}
+					</a>
+
+					<p class="md:text-base text-sm font-medium ml-3 text-slate-400">{cert.caption}</p>
+				</div>
 			</button>
 		{/each}
 	</div>
