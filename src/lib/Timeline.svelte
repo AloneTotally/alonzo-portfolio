@@ -9,7 +9,7 @@
 	export let timeline: Timeline[];
 </script>
 
-<div class="relative">
+<div class="relative hidden sm:block">
 	{#each timeline as element, i}
 		{#if i % 2 == 0}
 			<div class="flex flex-col justify-end items-end">
@@ -23,7 +23,7 @@
 						<div class="w-1 bg-indigo-600 mr-12 line h-1/2" />
 					</div>
 					<div class="flex flex-col max-w-5/12 mr-10 mt-10">
-						<div class="font-bold text-2xl">{element.header}</div>
+						<div class="font-bold md:text-2xl text-xl">{element.header}</div>
 						<div class="font-bold text-slate-400">{element.timePeriod}</div>
 						{#if element.points.length > 0}
 							<div class="font-bold mt-3">{element.pointsHeader}</div>
@@ -61,5 +61,32 @@
 				</div>
 			</div>
 		{/if}
+	{/each}
+</div>
+
+<div class="relative ml-10 sm:hidden">
+	{#each timeline as element}
+		<div class="flex flex-col justify-start items-start">
+			<div class="flex flex-row items-stretch">
+				<div class="flex flex-col ml-30">
+					<div class="w-1 bg-indigo-600 mr-12 line h-1/2" />
+					<div class="rounded-full w-5 h-5 bg-indigo-500 mr-10 -ml-2" />
+					<div class="w-1 bg-indigo-600 mr-12 line h-1/2" />
+				</div>
+				<div class="flex flex-col w-10/12 mr-10 mt-10">
+					<div class="font-bold md:text-2xl text-xl">{element.header}</div>
+					<div class="font-bold text-slate-400">{element.timePeriod}</div>
+					{#if element.points.length > 0}
+						<div class="font-bold mt-3">{element.pointsHeader}</div>
+						<ul class="list-disc list-inside">
+							{#each element.points as point}
+								<li>{point}</li>
+							{/each}
+						</ul>
+					{/if}
+					<!-- <p class="text-left mb-10 max-h-10">{element.text}</p> -->
+				</div>
+			</div>
+		</div>
 	{/each}
 </div>

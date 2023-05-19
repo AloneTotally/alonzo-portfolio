@@ -122,10 +122,10 @@
 		{/each}
 	</div>
 
-	<div class="lg:grid lg:grid-cols-3 flex-col gap-3 w-10/12">
+	<div class="md:grid xl:grid-cols-4 lg:grid-cols-3 flex-col gap-3 w-10/12">
 		{#each showing as cert}
 			<button
-				class="bg-gray-800 text-left flex flex-row lg:flex-col pb-5 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-300 cursor-pointer card w-full"
+				class="bg-gray-800 text-left flex flex-row lg:flex-col pb-5 mt-3 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-300 cursor-pointer card w-full"
 				transition:fly
 			>
 				<button
@@ -138,7 +138,7 @@
 						class="lg:w-auto lg:h-full lg:max-h-60 w-auto max-h-full rounded-t-xl"
 					/>
 				</button>
-				<div class="flex flex-col gap-1 w-7/12">
+				<div class="flex flex-col gap-1 lg:w-11/12 w-7/12">
 					<a
 						href={cert.link}
 						class="text-white md:text-xl text-lg font-semibold mx-3 mt-3 transition-colors duration-500 title hover:text-indigo-400 w-full"
