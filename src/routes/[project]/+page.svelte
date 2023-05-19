@@ -29,9 +29,6 @@
 </svelte:head>
 
 <body class="bg-slate-900">
-	<div class="bottom-10 right-10 fixed text-slate-500 font-medium">
-		{'Project #' + (index.toString().length == 1 ? '0' + index.toString() : index)}
-	</div>
 	{#if !startGridAnimation}
 		<div
 			class="loading-wrapper z-20 bg-slate-900 flex justify-center items-center"
@@ -40,16 +37,18 @@
 			<div class="loading z-20 w-10 h-10 bg-slate-900" id="loading" transition:fade />
 		</div>
 	{/if}
-	<div class="w-full flex flex-row gap-10 text-white">
-		<div class="border-r w-8/12 border-indigo-500">
+
+	<div class="w-full flex md:flex-row flex-col-reverse gap-10 text-white">
+		<div class="border-r w-full md:w-8/12 border-indigo-500">
 			{#each projectInfo.photoURLs as photo}
-				<figure>
-					<figcaption class="font-bold mt-10">{photo[1]}</figcaption>
+				<figure class="mt-10 mx-5 md:mx-0">
+					<figcaption class="font-bold mt-10 mb-2">{photo[1]}</figcaption>
 					<img class="w-full h-auto" src={photo[0]} alt="" />
 				</figure>
 			{/each}
 		</div>
-		<div class="right-0 fixed w-4/12 pl-10">
+
+		<div class="md:right-0 md:fixed static md:w-4/12 w-full pl-10 md:mb-10">
 			<div class="flex flex-row justify-between mt-5 -ml-5 mr-5">
 				{#if index > 1}
 					<a
@@ -95,7 +94,7 @@
 					<li class="text-gray-400 font-light font-mono text-sm">{tech}</li>
 				{/each}
 			</ul>
-			<div class="flex flex-row mt-5">
+			<div class="flex flex-row justify-between mt-5">
 				<a
 					class="bg-indigo-600 duration-300 hover:bg-indigo-500 px-3 py-1 rounded-md w-fit flex flex-row items-center gap-1"
 					href={projectInfo.githubLink}
@@ -116,8 +115,14 @@
 							/>
 						</g>
 					</svg>
+
 					<p class="pr-1">View on Github</p>
 				</a>
+				<div
+					class="md:bottom-10 md:right-0 md:fixed text-slate-500 font-medium mr-10 flex justify-center items-center"
+				>
+					{'Project #' + (index.toString().length == 1 ? '0' + index.toString() : index)}
+				</div>
 			</div>
 		</div>
 	</div>
