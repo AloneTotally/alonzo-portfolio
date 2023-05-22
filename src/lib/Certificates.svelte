@@ -106,7 +106,7 @@
 
 <div class="text-white flex flex-col items-center text-lg scroll-mt-12" id="Certificates">
 	<Modal bind:showModal>
-		<img src={modalPhoto} alt="" class="max-h-5/6 w-auto" />
+		<img src={modalPhoto} alt="" class="w-5/6 h-auto md:h-5/6 md:w-auto" />
 	</Modal>
 	<h2 class="font-extrabold text-4xl mt-10">Certificates</h2>
 	<span class="text-slate-400 mb-16">Certificates from competitions or courses</span>
