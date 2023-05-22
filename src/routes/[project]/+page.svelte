@@ -48,7 +48,7 @@
 			{/each}
 		</div>
 
-		<div class="md:right-0 md:fixed static md:w-4/12 w-full pl-10 md:mb-10">
+		<div class="md:right-0 md:fixed static md:w-4/12 w-full px-10 md:mb-10">
 			<div class="flex flex-row justify-between mt-5 -ml-5 mr-5">
 				{#if index > 1}
 					<a
@@ -86,7 +86,7 @@
 					</a>
 				{/if}
 			</div>
-			<h1 class="font-bold text-4xl mt-10">{projectInfo.title}</h1>
+			<h1 class="font-bold text-2xl md:text-4xl mt-10">{projectInfo.title}</h1>
 			<p class="mt-2 font-semibold text-sm text-gray-400">Done in {projectInfo.date}</p>
 			<div class="mt-5 mr-5">{projectInfo.description}</div>
 			<ul class="flex flex-row gap-2 flex-wrap mt-5">
@@ -164,4 +164,17 @@
 	.popupwrapper:hover .popup {
 		opacity: 1;
 	}
+	/* .skeleton {
+		animation: skeleton-loading 1s linear infinite alternate;
+	}
+
+	@keyframes skeleton-loading {
+		0% {
+			background-color: hsl(200, 20%, 30%);
+		}
+
+		100% {
+			background-color: hsl(200, 20%, 50%);
+		}
+	} */
 </style>

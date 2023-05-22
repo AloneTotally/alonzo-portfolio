@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Modal from '$lib/Modal.svelte';
-	import { fly } from 'svelte/transition';
+	import IntersectionObserver from 'svelte-intersection-observer';
 
 	const compCerts = {
 		'aio-2022': {
@@ -32,6 +32,12 @@
 			photoURL: '../../cert-pics/drct-global-finals-2021.jpg',
 			caption: 'Silver',
 			link: 'https://smo-testing.com/drctfinals/'
+		},
+		'immc-2023': {
+			name: 'International Mathematical Modeling Challenge (IM²C)',
+			photoURL: '../../cert-pics/immc-2023.jpg',
+			caption: 'Certificate of Commendation',
+			link: 'https://www.immchallenge.org/'
 		},
 		'perse-2022': {
 			name: 'Perse Coding Team Challenge 2022',
@@ -99,9 +105,13 @@
 		currentNavItem = navItem;
 	};
 	let showMore = false;
+	let showing = Object.values(currentGallery).splice(0, 6);
 	$: showing = showMore
 		? Object.values(currentGallery)
 		: Object.values(currentGallery).splice(0, 6);
+	let elementOnceList: HTMLElement[] = new Array(showing.length);
+	let displayList: boolean[] = new Array(showing.length);
+	displayList.fill(false);
 </script>
 
 <div class="text-white flex flex-col items-center text-lg scroll-mt-12" id="Certificates">
@@ -121,36 +131,46 @@
 			</button>
 		{/each}
 	</div>
-
 	<div class="md:grid xl:grid-cols-4 lg:grid-cols-3 flex-col gap-3 w-10/12">
-		{#each showing as cert}
-			<button
-				class="bg-gray-800 text-left flex flex-row lg:flex-col pb-5 mt-3 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-300 cursor-pointer card w-full"
-				transition:fly
+		{#each showing as cert, i}
+			<IntersectionObserver
+				threshold={0.2}
+				element={elementOnceList[i]}
+				on:observe={(e) => {
+					console.log(e.detail); // IntersectionObserverEntry
+					console.log(e.detail.isIntersecting); // true | false
+					displayList[i] = e.detail.isIntersecting;
+				}}
 			>
 				<button
-					on:click={() => handleClick(cert.photoURL)}
-					class="relative photo flex justify-center items-center lg:w-full w-2/6 h-40"
+					bind:this={elementOnceList[i]}
+					class="opacity-0 bg-gray-800 text-left flex flex-row lg:flex-col pb-5 mt-3 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-700 cursor-pointer card w-full"
+					class:opacity-100={displayList[i]}
 				>
-					<img
-						src={cert.photoURL}
-						alt=""
-						class="lg:w-auto lg:h-full lg:max-h-60 w-auto max-h-full rounded-t-xl"
-					/>
-				</button>
-				<div class="flex flex-col gap-1 lg:w-11/12 w-7/12">
-					<a
-						href={cert.link}
-						class="text-white md:text-xl text-lg font-semibold mx-3 mt-3 transition-colors duration-500 title hover:text-indigo-400 w-full"
-						target="_blank"
-						rel="external"
+					<button
+						on:click={() => handleClick(cert.photoURL)}
+						class="relative photo flex justify-center items-center lg:w-full w-2/6 h-40"
 					>
-						{cert.name}
-					</a>
+						<img
+							src={cert.photoURL}
+							alt=""
+							class="lg:w-auto lg:h-full lg:max-h-60 w-auto max-h-full rounded-t-xl"
+						/>
+					</button>
+					<div class="flex flex-col gap-1 lg:w-11/12 w-7/12">
+						<a
+							href={cert.link}
+							class="text-white md:text-xl text-lg font-semibold mx-3 mt-3 transition-colors duration-500 title hover:text-indigo-400 w-full"
+							target="_blank"
+							rel="external"
+						>
+							{cert.name}
+						</a>
 
-					<p class="md:text-base text-sm font-medium ml-3 text-slate-400">{cert.caption}</p>
-				</div>
-			</button>
+						<p class="md:text-base text-sm font-medium ml-3 text-slate-400">{cert.caption}</p>
+					</div>
+				</button>
+			</IntersectionObserver>
 		{/each}
 	</div>
 	{#if Object.values(currentGallery).length > 6}

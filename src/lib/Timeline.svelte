@@ -1,8 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
-	import { fade } from 'svelte/transition';
-
 	// {date: "frgth", text: 'textfdgf'}
 	interface Timeline {
 		header: string;
@@ -61,17 +58,18 @@
 					</div>
 					<!-- {element} -->
 					<IntersectionObserver
+						threshold={0.2}
 						element={elementOnceList[i]}
 						on:observe={(e) => {
-							console.log(e.detail); // IntersectionObserverEntry
-							console.log(e.detail.isIntersecting); // true | false
+							// console.log(e.detail); // IntersectionObserverEntry
+							// console.log(e.detail.isIntersecting); // true | false
 							displayList[i] = e.detail.isIntersecting;
 						}}
 					>
 						<!-- <div bind:this={elementOnce} transition:fade>Hello world</div> -->
 						<div
 							bind:this={elementOnceList[i]}
-							class="flex-col max-w-5/12 mr-10 mt-10 opacity-0 transition-all duration-1000"
+							class="flex-col max-w-5/12 mr-10 mt-10 opacity-0 transition-all duration-700"
 							class:opacity-100={displayList[i]}
 						>
 							<div class="font-bold md:text-2xl text-xl">{element.header}</div>
