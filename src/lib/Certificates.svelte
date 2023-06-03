@@ -137,15 +137,18 @@
 				threshold={0.2}
 				element={elementOnceList[i]}
 				on:observe={(e) => {
-					console.log(e.detail); // IntersectionObserverEntry
-					console.log(e.detail.isIntersecting); // true | false
+					// console.log(e.detail); // IntersectionObserverEntry
+					// console.log(e.detail.isIntersecting); // true | false
+
 					displayList[i] = e.detail.isIntersecting;
 				}}
 			>
 				<button
 					bind:this={elementOnceList[i]}
-					class="opacity-0 bg-gray-800 text-left flex flex-row lg:flex-col pb-5 mt-3 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-700 cursor-pointer card w-full"
+					class="opacity-0 bg-gray-800 text-left flex flex-row lg:flex-col pb-5 mt-3 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-700 cursor-pointer card w-full -translate-x-10 blur"
 					class:opacity-100={displayList[i]}
+					class:blur-none={displayList[i]}
+					class:-translate-x-10={!displayList[i]}
 				>
 					<button
 						on:click={() => handleClick(cert.photoURL)}

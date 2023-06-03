@@ -69,8 +69,10 @@
 						<!-- <div bind:this={elementOnce} transition:fade>Hello world</div> -->
 						<div
 							bind:this={elementOnceList[i]}
-							class="flex-col max-w-5/12 mr-10 mt-10 opacity-0 transition-all duration-700"
 							class:opacity-100={displayList[i]}
+							class:blur-none={displayList[i]}
+							class:translate-x-10={!displayList[i]}
+							class="flex-col max-w-5/12 mr-10 mt-10 opacity-0 transition-all duration-700 blur"
 						>
 							<div class="font-bold md:text-2xl text-xl">{element.header}</div>
 							<div class="font-bold text-slate-400">{element.timePeriod}</div>
@@ -101,7 +103,9 @@
 						<div
 							bind:this={elementOnceList[i]}
 							class:opacity-100={displayList[i]}
-							class="flex flex-col max-w-5/12 mr-10 mt-10 opacity-0 transition-all duration-1000"
+							class:blur-none={displayList[i]}
+							class:-translate-x-10={!displayList[i]}
+							class="flex flex-col max-w-5/12 mr-10 mt-10 opacity-0 transition-all duration-1000 blur -translate-x-10"
 						>
 							<div class="font-bold md:text-2xl text-xl">{element.header}</div>
 							<div class="font-bold text-slate-400">{element.timePeriod}</div>
@@ -145,9 +149,11 @@
 					}}
 				>
 					<div
-						class="flex flex-col w-10/12 mr-10 mt-10 opacity-0 transition-all duration-1000"
+						class="flex flex-col w-10/12 mr-10 mt-10 opacity-0 transition-all duration-1000 -translate-x-10"
 						bind:this={smallElementOnceList[i]}
 						class:opacity-100={smallDisplayList[i]}
+						class:blur-none={smallDisplayList[i]}
+						class:-translate-x-10={!smallDisplayList[i]}
 					>
 						<div class="font-bold md:text-2xl text-xl">{element.header}</div>
 						<div class="font-bold text-slate-400">{element.timePeriod}</div>

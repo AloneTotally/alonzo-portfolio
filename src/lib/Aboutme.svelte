@@ -7,7 +7,7 @@
 		id="aboutme"
 	>
 		<div class="text-4xl font-bold w-10/12 md:text-left text-center">Hi, I am Alonzo Puah</div>
-		<div class="lg:text-2xl text-lg font-bold text-slate-300 mt-3 w-10/12 md:text-left text-center">
+		<div class="lg:text-2xl text-lg font-bold text-gray-300 mt-3 w-10/12 md:text-left text-center">
 			SST student in Singapore
 		</div>
 		<div class="mt-5 w-10/12 text-sm md:text-base md:text-left text-center">
@@ -16,7 +16,7 @@
 		</div>
 
 		<a
-			class="px-7 py-4 bg-slate-800 my-10 text-lg font-light hover:bg-slate-700 w-fit md:text-left text-center"
+			class="px-7 py-4 bg-slate-800 my-10 text-lg font-light hover:bg-slate-700 w-fit md:text-left text-center transition-all duration-300"
 			href="#Projects">View my stuff &darr;</a
 		>
 	</div>

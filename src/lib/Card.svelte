@@ -3,6 +3,7 @@
 	export let description: string = '';
 	export let photoURL: string;
 	export let technologies: string[] = [];
+	export let extra: string;
 	import IntersectionObserver from 'svelte-intersection-observer';
 	let element: HTMLElement;
 	let display = false;
@@ -19,11 +20,14 @@
 >
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div
-		class="opacity-0 bg-gray-800 flex lg:flex-col flex-row lg:py-3 pb-3 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-700 cursor-pointer card mb-3"
+		class="opacity-0 bg-gray-800 flex lg:flex-col flex-row lg:py-3 pb-3 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-700 cursor-pointer card mb-3 blur"
 		on:click
 		class:opacity-100={display}
+		class:blur-none={display}
+		class:translate-x-10={!display}
 		bind:this={element}
 	>
+		<div class="absolute bottom-2 right-3 text-gray-400 font-bold font-mono text-sm">{extra}</div>
 		<div class="w-1/3 lg:w-full">
 			<img src={photoURL} alt="" class="max-w-full h-auto rounded-t-xl" />
 		</div>

@@ -74,7 +74,7 @@
 				left: 0,
 				behavior: 'smooth'
 			})}
-		class="fixed z-10 bg-indigo-600 bottom-10 right-10 rounded-full w-10 h-10 text-center"
+		class="fixed z-10 bg-indigo-600 bottom-10 right-10 rounded-full w-10 h-10 text-center hover:bg-indigo-500 transition-colors duration-300"
 	>
 		&uparrow;
 	</button>

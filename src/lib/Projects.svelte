@@ -36,6 +36,7 @@
 				photoURL={card.photoURLs[0][0].slice(3)}
 				technologies={card.technologies}
 				on:click={(e) => handleClick(e, card.title)}
+				extra={card.date}
 			/>
 		{/each}
 	</div>
