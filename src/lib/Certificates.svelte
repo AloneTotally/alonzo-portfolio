@@ -50,6 +50,12 @@
 			photoURL: '../../cert-pics/perse-2023.png',
 			caption: 'Distinction',
 			link: 'https://pctc.perse.co.uk/'
+		},
+		'perse-2023-round-2': {
+			name: 'Perse Coding Team Challenge 2023 Final Round',
+			photoURL: '../../cert-pics/perse-2023-r2.png',
+			caption: 'Distinction',
+			link: 'https://pctc.perse.co.uk/'
 		}
 	};
 	const courseCerts = {
@@ -85,9 +91,9 @@
 		}
 	};
 	const certs = {
-		All: { ...courseCerts, ...compCerts },
-		Courses: courseCerts,
-		Competitions: compCerts
+		All: { ...compCerts, ...courseCerts },
+		Competitions: compCerts,
+		Courses: courseCerts
 	};
 	let modalPhoto = '';
 	let showModal: boolean = false;
@@ -96,7 +102,7 @@
 		modalPhoto = photoURL;
 	};
 
-	const sortNav = ['All', 'Courses', 'Competitions'];
+	const sortNav = ['All', 'Competitions', 'Courses'];
 	let currentGallery = certs.All;
 	let currentNavItem = 'All';
 	const sortCerts = (navItem: string) => {
@@ -170,7 +176,18 @@
 							{cert.name}
 						</a>
 
-						<p class="md:text-base text-sm font-medium ml-3 text-slate-400">{cert.caption}</p>
+						<p
+							class="md:text-base text-sm ml-3
+							{cert.caption == 'Bronze'
+								? 'text-orange-400 font-bold'
+								: cert.caption == 'Silver' || cert.caption == 'Merit'
+								? 'text-gray-300 font-bold'
+								: cert.caption == 'Gold' || cert.caption == 'Distinction'
+								? 'text-yellow-300 font-bold'
+								: 'text-slate-400 font-medium'}"
+						>
+							{cert.caption}
+						</p>
 					</div>
 				</button>
 			</IntersectionObserver>
