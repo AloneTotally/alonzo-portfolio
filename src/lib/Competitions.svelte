@@ -5,9 +5,12 @@
 			header: '2023',
 			pointsHeader: 'Competitions',
 			points: [
-				'Perse Coding Team Challenge (Round 1)',
-				'IMMC 2023',
-				'Perse Coding Team Challenge (Final Round)'
+				{ text: 'Perse Coding Team Challenge (Round 1)', caption: 'Distinction' },
+				{
+					text: 'International Mathematical Modelling Challenge 2023',
+					caption: 'Certificate of Commendation'
+				},
+				{ text: 'Perse Coding Team Challenge (Final Round)', caption: 'Distinction' }
 			],
 			timePeriod: ''
 		},
@@ -15,13 +18,13 @@
 			header: '2022',
 			pointsHeader: 'Competitions',
 			points: [
-				'Computational and Algorithmic Thinking 2022',
-				'Oxford University Computing Challenge 2022',
-				'Perse Coding Team Challenge (Round 1)',
-				'NOI 2022',
-				'Perse Coding Team Challenge (Final Round)',
-				'Australian Informatics Olympiad',
-				'International Bebras Challenge'
+				{ text: 'Computational and Algorithmic Thinking 2022', caption: 'Participation' },
+				{ text: 'Oxford University Computing Challenge 2022', caption: 'Silver' },
+				{ text: 'Perse Coding Team Challenge (Round 1)', caption: 'Merit' },
+				{ text: 'National Olympiad Of Informatics 2022', caption: '' },
+				{ text: 'Perse Coding Team Challenge (Final Round)', caption: 'Merit' },
+				{ text: 'Australian Informatics Olympiad 2022', caption: 'Bronze' },
+				{ text: 'Bebras Computational Thinking Challenge', caption: 'Honorable Mention' }
 			],
 			timePeriod: ''
 		},
@@ -29,8 +32,15 @@
 			header: '2021',
 			pointsHeader: 'Competitions',
 			points: [
-				'Design Thinking with Robotics and Computational Thinking',
-				'Script It Right Chinese Radio Drama Script Writing Competition'
+				{
+					text: 'Design Thinking with Robotics and Computational Thinking International Competition',
+					caption: 'Gold'
+				},
+				{ text: 'Script It Right Chinese Radio Drama Script Writing Competition', caption: '' },
+				{
+					text: 'Design Thinking With Robotics and Computational Thinking Global Finals 2021',
+					caption: 'Silver'
+				}
 			],
 			timePeriod: ''
 		},
@@ -38,9 +48,9 @@
 			header: '2020',
 			pointsHeader: 'Competitions',
 			points: [
-				'Singapore and Asian Schools Math Olympiad',
-				'Computational and Algorithmic Thinking (CAT)',
-				'Oxford University Computing Challenge (Challenge Round)'
+				{ text: 'Singapore and Asian Schools Math Olympiad', caption: '' },
+				{ text: 'Computational and Algorithmic Thinking (CAT)', caption: '' },
+				{ text: 'Oxford University Computing Challenge (Challenge Round)', caption: '' }
 			],
 			timePeriod: ''
 		}

@@ -6,10 +6,10 @@
 			header: 'School Of Science And Technology, Singapore',
 			pointsHeader: 'Leadership',
 			points: [
-				'B-Division Floorball captain (2022-2023)',
-				'C-Division Floorball vice-captain (2021-2022)',
-				'S2 Class vice-chairperson (2021-2022)',
-				'S1 Class vice-chairperson (2020-2021)'
+				{ text: 'B-Division Floorball captain (2022-2023)', caption: '' },
+				{ text: 'C-Division Floorball vice-captain (2021-2022)', caption: '' },
+				{ text: 'S2 Class vice-chairperson (2021-2022)', caption: '' },
+				{ text: 'S1 Class vice-chairperson (2020-2021)', caption: '' }
 			],
 			timePeriod: '2020-2023'
 		},
@@ -17,9 +17,9 @@
 			header: 'West Spring Primary School',
 			pointsHeader: 'Leadership',
 			points: [
-				'Prefect (2018-2019)',
-				'Trainee prefect (2017-2018)',
-				'Class vice-monitor (2015-2016)'
+				{ text: 'Prefect (2018-2019)', caption: '' },
+				{ text: 'Trainee prefect (2017-2018)', caption: '' },
+				{ text: 'Class vice-monitor (2015-2016)', caption: '' }
 			],
 			timePeriod: '2014-2019'
 		}

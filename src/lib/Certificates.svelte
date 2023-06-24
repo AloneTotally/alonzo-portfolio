@@ -1,63 +1,8 @@
 <script lang="ts">
 	import Modal from '$lib/Modal.svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
+	import { compCerts } from './stores';
 
-	const compCerts = {
-		'aio-2022': {
-			name: 'Australian Informatics Olympiad 2022',
-			photoURL: '../../cert-pics/aio-2022.JPG',
-			caption: 'Bronze',
-			link: 'https://aio.edu.au/'
-		},
-		'bebras-2022': {
-			name: 'Bebras Computational Thinking Challenge 2022',
-			photoURL: '../../cert-pics/bebras-2022.png',
-			caption: 'Honorable mention',
-			link: 'https://www.bebraschallenge.org/'
-		},
-		'cat-2022': {
-			name: 'Computational And Algorithmic Thinking 2021',
-			photoURL: '../../cert-pics/cat-2022.JPG',
-			caption: 'Participation',
-			link: 'https://www.amt.edu.au/cat'
-		},
-		'drct-2021': {
-			name: 'Design Thinking with Robotics and Computational Thinking 2021',
-			photoURL: '../../cert-pics/drct-2021.JPG',
-			caption: 'Gold',
-			link: 'https://www.internationalolympiadacademy.com/olympiads/drct-design-thinking-with-robotics-and-computational-thinking'
-		},
-		'drct-global-finals-2021': {
-			name: 'Design Thinking with Robotics and Computational Thinking Global Finals 2021',
-			photoURL: '../../cert-pics/drct-global-finals-2021.jpg',
-			caption: 'Silver',
-			link: 'https://smo-testing.com/drctfinals/'
-		},
-		'immc-2023': {
-			name: 'International Mathematical Modeling Challenge (IM²C)',
-			photoURL: '../../cert-pics/immc-2023.jpg',
-			caption: 'Certificate of Commendation',
-			link: 'https://www.immchallenge.org/'
-		},
-		'perse-2022': {
-			name: 'Perse Coding Team Challenge 2022',
-			photoURL: '../../cert-pics/perse-2022.png',
-			caption: 'Merit',
-			link: 'https://pctc.perse.co.uk/'
-		},
-		'perse-2023': {
-			name: 'Perse Coding Team Challenge 2023',
-			photoURL: '../../cert-pics/perse-2023.png',
-			caption: 'Distinction',
-			link: 'https://pctc.perse.co.uk/'
-		},
-		'perse-2023-round-2': {
-			name: 'Perse Coding Team Challenge 2023 Final Round',
-			photoURL: '../../cert-pics/perse-2023-r2.png',
-			caption: 'Distinction',
-			link: 'https://pctc.perse.co.uk/'
-		}
-	};
 	const courseCerts = {
 		'cybersecurity-essentials': {
 			name: 'Cybersecurity Essentials',

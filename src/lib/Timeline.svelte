@@ -1,9 +1,13 @@
 <script lang="ts">
 	import IntersectionObserver from 'svelte-intersection-observer';
 	// {date: "frgth", text: 'textfdgf'}
+	interface point {
+		text: string;
+		caption: string;
+	}
 	interface Timeline {
 		header: string;
-		points: string[];
+		points: point[];
 		pointsHeader: string;
 		timePeriod: string;
 	}
@@ -21,26 +25,6 @@
 	// });
 	// timelinelist = new Array(timeline.length);
 	// timelinelist.fill(false);
-
-	// function isInViewport(element: HTMLElement) {
-	// 	try {
-	// 		const rect = element.getBoundingClientRect();
-	// 		return rect.bottom >= 100;
-	// 	} catch (error) {
-	// 		return false;
-	// 	}
-	// }
-
-	// const checkElementInView = () => {
-	// 	for (let i = 0; i < timelinelist.length; i++) {
-	// 		let element: HTMLElement = document.getElementById(i.toString());
-
-	// 		if (isInViewport(element)) {
-	// 			timelinelist[i] = true;
-	// 			console.log(timelinelist);
-	// 		}
-	// 	}
-	// };
 </script>
 
 <div class="relative hidden sm:block">
@@ -80,7 +64,24 @@
 								<div class="font-bold mt-3">{element.pointsHeader}</div>
 								<ul class="list-disc list-inside">
 									{#each element.points as point}
-										<li>{point}</li>
+										<li class="mt-1">
+											{point.text}
+											{#if point.caption != ''}
+												<span class="mx-1">&#x2022</span>
+												<span
+													class="md:text-base text-sm
+									{point.caption == 'Bronze'
+														? 'text-orange-400 font-bold'
+														: point.caption == 'Silver' || point.caption == 'Merit'
+														? 'text-gray-300 font-bold'
+														: point.caption == 'Gold' || point.caption == 'Distinction'
+														? 'text-yellow-300 font-bold'
+														: 'text-slate-400 font-bold'}"
+												>
+													{point.caption}</span
+												>
+											{/if}
+										</li>
 									{/each}
 								</ul>
 							{/if}
@@ -114,7 +115,24 @@
 								<div class="font-bold mt-3">{element.pointsHeader}</div>
 								<ul class="list-disc list-inside">
 									{#each element.points as point}
-										<li>{point}</li>
+										<li class="mt-1">
+											{point.text}
+											{#if point.caption != ''}
+												<span class="mx-1">&#x2022</span>
+												<span
+													class="md:text-base text-sm
+									{point.caption == 'Bronze'
+														? 'text-orange-400 font-bold'
+														: point.caption == 'Silver' || point.caption == 'Merit'
+														? 'text-gray-300 font-bold'
+														: point.caption == 'Gold' || point.caption == 'Distinction'
+														? 'text-yellow-300 font-bold'
+														: 'text-slate-400 font-bold'}"
+												>
+													{point.caption}</span
+												>
+											{/if}
+										</li>
 									{/each}
 								</ul>
 							{/if}
@@ -161,7 +179,24 @@
 							<div class="font-bold mt-3">{element.pointsHeader}</div>
 							<ul class="list-disc list-inside">
 								{#each element.points as point}
-									<li>{point}</li>
+									<li class="mt-1">
+										{point.text}
+										{#if point.caption != ''}
+											<span class="mx-1">&#x2022</span>
+											<span
+												class="md:text-base text-sm
+									{point.caption == 'Bronze'
+													? 'text-orange-400 font-bold'
+													: point.caption == 'Silver' || point.caption == 'Merit'
+													? 'text-gray-300 font-bold'
+													: point.caption == 'Gold' || point.caption == 'Distinction'
+													? 'text-yellow-300 font-bold'
+													: 'text-slate-400 font-bold'}"
+											>
+												{point.caption}</span
+											>
+										{/if}
+									</li>
 								{/each}
 							</ul>
 						{/if}
