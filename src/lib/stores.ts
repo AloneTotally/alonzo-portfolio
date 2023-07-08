@@ -76,6 +76,7 @@ export const cardData = {
 		]
 	}
 };
+export const compCerts = {
 	'aio-2022': {
 		name: 'Australian Informatics Olympiad 2022',
 		photoURL: '../../cert-pics/aio-2022.JPG',
