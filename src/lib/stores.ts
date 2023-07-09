@@ -25,7 +25,7 @@ export const cardData = {
 		description:
 			'My Secondary 4 computing+ coursework, a kivy app which helps you decide what to eat judging by the locations near you',
 		githubLink: 'https://github.com/AloneTotally/JSAcompcoursework2023',
-		technologies: ['Kivy', 'KivyMD', 'Python3'],
+		technologies: ['Kivy', 'KivyMD', 'Python3', 'Firebase'],
 		photoURLs: [
 			['../../projects/Foodie.png', 'Homepage'],
 			['../../projects/Foodie1.png', 'View Location page'],
@@ -55,7 +55,7 @@ export const cardData = {
 		description:
 			'My Secondary 3 SST Inc project, which is a website used to help the ease of communication between the ICT helpdesk and the students in a school (Incomplete, more details in the github repository)',
 		githubLink: 'https://github.com/snyperf1/WeShaalHelp',
-		technologies: ['Sveltekit', 'Tailwind', 'HTML', 'CSS', 'Typescript'],
+		technologies: ['Sveltekit', 'Tailwind', 'HTML', 'CSS', 'Typescript', 'Firebase'],
 		photoURLs: [
 			['../../projects/Rebot.png', 'Section of Admin Homepage (All placeholders)'],
 			['../../projects/Rebot1.png', 'Full Admin Homepage (All placeholders)']
@@ -69,7 +69,7 @@ export const cardData = {
 		description:
 			'My Secondary 2 CM project, which is a forum website which is focused on questions that are environmentally related.',
 		githubLink: 'https://github.com/AloneTotally/cmproject-reMake',
-		technologies: ['HTML', 'CSS', 'Javascript'],
+		technologies: ['HTML', 'CSS', 'Javascript', 'Firebase'],
 		photoURLs: [
 			['../../projects/reMake.png', 'Feed'],
 			['../../projects/reMake1.png', 'Posting question page']
