@@ -20,7 +20,7 @@
 >
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div
-		class="opacity-0 bg-gray-800 flex lg:flex-col flex-row lg:py-3 pb-3 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-700 cursor-pointer card mb-3 blur"
+		class="opacity-0 bg-gray-800 flex lg:flex-col flex-row pb-3 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-700 cursor-pointer card mb-3 blur"
 		on:click
 		class:opacity-100={display}
 		class:blur-none={display}
@@ -38,7 +38,7 @@
 				{title}
 			</p>
 			{#if description != ''}
-				<p class="text-white max-w-fit ml-3 mt-2 text-base">
+				<p class="text-white max-w-fit mx-3 mt-2 text-base">
 					{description}
 				</p>
 			{/if}

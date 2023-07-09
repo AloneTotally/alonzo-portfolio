@@ -10,6 +10,7 @@
 	import { fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import Contacts from '$lib/Contacts.svelte';
+	import Service from '$lib/Service.svelte';
 
 	let rows = 0;
 	let columns = 0;
@@ -100,6 +101,7 @@
 	<Grid {rows} {columns} {startGridAnimation} bind:loadIndex />
 	<Aboutme />
 	<Projects on:cardclicked={(e) => handleCardClicked(e)} />
+	<Service />
 	<Education />
 	<Competitions />
 	<Certificates />
