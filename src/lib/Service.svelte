@@ -11,9 +11,9 @@
 				'A 5 hour python workshop carried out by my class in collaboration with the Buona Vista Youth Network',
 			image: '../serviceprojects/pi5-teaching.png',
 			images: [
-				'../serviceprojects/pi5-assist.png',
-				'../serviceprojects/pi5-teaching.png',
-				'../serviceprojects/pi5-teaching2.png'
+				'../serviceprojects/pi5-assist.jpg',
+				'../serviceprojects/pi5-teaching.jpg',
+				'../serviceprojects/pi5-teaching2.jpg'
 			]
 		}
 	];
