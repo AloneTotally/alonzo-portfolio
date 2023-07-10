@@ -35,10 +35,19 @@
 			link: 'https://education.apple.com/en'
 		}
 	};
+	const otherCerts = {
+		'co-curriculum-certificate-2023': {
+			name: 'Co-Curriculum Certificate 2023',
+			photoURL: '../../cert-pics/Co-Curriculum-Certificate.jpg',
+			caption: 'From school',
+			link: '../../cert-pics/Co-Curriculum-Certificate.pdf'
+		}
+	};
 	const certs = {
-		All: { ...compCerts, ...courseCerts },
+		All: { ...otherCerts, ...compCerts, ...courseCerts },
 		Competitions: compCerts,
-		Courses: courseCerts
+		Courses: courseCerts,
+		Others: otherCerts
 	};
 	let modalPhoto = '';
 	let showModal: boolean = false;
@@ -47,7 +56,7 @@
 		modalPhoto = photoURL;
 	};
 
-	const sortNav = ['All', 'Competitions', 'Courses'];
+	const sortNav = ['All', 'Competitions', 'Courses', 'Others'];
 	let currentGallery = certs.All;
 	let currentNavItem = 'All';
 	const sortCerts = (navItem: string) => {
@@ -56,10 +65,10 @@
 		currentNavItem = navItem;
 	};
 	let showMore = false;
-	let showing = Object.values(currentGallery).splice(0, 6);
+	let showing = Object.values(currentGallery).splice(0, 8);
 	$: showing = showMore
 		? Object.values(currentGallery)
-		: Object.values(currentGallery).splice(0, 6);
+		: Object.values(currentGallery).splice(0, 8);
 	let elementOnceList: HTMLElement[] = new Array(showing.length);
 	let displayList: boolean[] = new Array(showing.length);
 	displayList.fill(false);
@@ -138,7 +147,7 @@
 			</IntersectionObserver>
 		{/each}
 	</div>
-	{#if Object.values(currentGallery).length > 6}
+	{#if Object.values(currentGallery).length > 8}
 		<button
 			class="rounded-lg bg-indigo-500 text-white py-2 px-6 mt-10 transition-all duration-200"
 			on:click={() => (showMore = !showMore)}>{showMore ? 'Show less' : 'Show more'}</button

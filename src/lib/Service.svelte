@@ -9,7 +9,7 @@
 				'In 2022, my class conducted a 5 hour python workshop, Python in Five, in collaboration with the Buona Vista Youth Network. I was one of the lead instructors there and I helped to plan out the slides and the curriculum. We had two runs of the workshop on 13 March and 16 March, and had multiple dry runs to prepare for the workshop. We had around 60 participants in total, including the dry runs and the event runs, and had positive feedback from the students.',
 			shortDescription:
 				'A 5 hour python workshop carried out by my class in collaboration with the Buona Vista Youth Network',
-			image: '../serviceprojects/pi5-teaching.png',
+			image: '../serviceprojects/pi5-teaching.jpg',
 			images: [
 				'../serviceprojects/pi5-assist.jpg',
 				'../serviceprojects/pi5-teaching.jpg',

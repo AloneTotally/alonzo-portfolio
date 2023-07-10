@@ -12,7 +12,8 @@
 		</div>
 		<div class="mt-5 w-10/12 text-sm md:text-base md:text-left text-center">
 			At SST, I worked on web projects and gained some knowledge of programming and web development,
-			most of which is self-taught.
+			most of which is self-taught. Moreover, I take the computing applied subject in Secondary 3
+			and 4.
 		</div>
 
 		<a
