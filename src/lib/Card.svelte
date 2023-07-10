@@ -43,7 +43,7 @@
 				</p>
 			{/if}
 			{#if technologies.length > 0}
-				<ul class="flex flex-row gap-2 flex-wrap mt-5 mx-3 text-sm md:text-base">
+				<ul class="flex flex-row gap-2 flex-wrap mt-5 mx-3 text-sm md:text-base w-10/12">
 					{#each technologies as tech}
 						<li class="text-gray-400 font-light font-mono text-xs">{tech}</li>
 					{/each}
