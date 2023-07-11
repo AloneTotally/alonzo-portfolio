@@ -74,6 +74,24 @@ export const cardData = {
 			['../../projects/reMake.png', 'Feed'],
 			['../../projects/reMake1.png', 'Posting question page']
 		]
+	},
+	'suSSTaina-Ng': {
+		title: 'suSSTaina-Ng',
+		date: '2022',
+		previewDescription:
+			'A proof-of-concept school project used to help reduce Eutrophication in the school pond by growing plants in the pond.',
+		description:
+			'A proof-of-concept school project, which uses the help of plants to reduce eutrophication in the school pond. Although we had some success in growing the plants, it eventually died after a while due to parasites and algae.',
+		githubLink:
+			'https://www.instagram.com/p/Co7LQy1yMN5/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==', // TODO
+		technologies: ['School', 'Plants', 'Sustainability'],
+		photoURLs: [
+			['../../projects/susstainang2.jpg', 'Second prototype'],
+			['../../projects/susstainang.jpg', 'First prototype'],
+			['../../projects/susstainang1.jpg', 'Plants of first prototype'],
+			['../../projects/susstainang3.jpg', 'Loss of leaves in second prototype'],
+			['../../projects/susstainang4.jpg', 'Underside of leaf after loss of leaves']
+		]
 	}
 };
 export const compCerts = {

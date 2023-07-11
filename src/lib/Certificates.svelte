@@ -79,7 +79,7 @@
 		<img src={modalPhoto} alt="" class="w-5/6 h-auto md:h-5/6 md:w-auto" />
 	</Modal>
 	<h2 class="font-extrabold text-4xl mt-10">Certificates</h2>
-	<span class="text-slate-400 mb-16">Certificates from competitions or courses</span>
+	<span class="text-slate-400 mb-16">Certificates from competitions, courses or school</span>
 	<div class="flex flex-row justify-start gap-10 w-10/12 mb-10 text-slate-400">
 		{#each sortNav as navItem}
 			<button
