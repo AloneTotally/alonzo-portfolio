@@ -137,7 +137,7 @@
 							/>
 						</svg>
 
-						<p class="pr-1">View more information</p>
+						<p class="pr-1">View more</p>
 					{/if}
 				</a>
 
