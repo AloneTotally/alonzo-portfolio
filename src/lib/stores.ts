@@ -24,8 +24,7 @@ export const cardData = {
 			'A kivy app which helps you decide what to eat judging by the locations near you',
 		description:
 			'My Secondary 4 computing+ coursework, a kivy app which helps you decide what to eat judging by the locations near you',
-		githubLink:
-			'https://drive.google.com/file/d/1nYLLBabQlykz2ZQTm3M4rLVkXQ2YbaYz/view?usp=sharing',
+		githubLink: 'https://github.com/AloneTotally/JSAcompcoursework2023',
 		technologies: ['Kivy', 'KivyMD', 'Python3', 'Firebase'],
 		photoURLs: [
 			['../../projects/Foodie.png', 'Homepage'],
