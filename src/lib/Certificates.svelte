@@ -2,45 +2,60 @@
 	import Modal from '$lib/Modal.svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import { compCerts } from './stores';
+	import { goto } from '$app/navigation';
 
 	const courseCerts = {
 		'cybersecurity-essentials': {
 			name: 'Cybersecurity Essentials',
 			photoURL: '../../cert-pics/cybersecurity-essentials.png',
 			caption: 'Certificate of completion',
-			link: 'https://www.netacad.com/courses/cybersecurity/cybersecurity-essentials'
+			link: 'https://www.netacad.com/courses/cybersecurity/cybersecurity-essentials',
+			imagepreview: true
 		},
 		'sololearn-go': {
 			name: 'Sololearn - Go',
 			photoURL: '../../cert-pics/sololearn-go.png',
 			caption: 'Sololearn Course',
-			link: 'https://www.sololearn.com/profile/25425602'
+			link: 'https://www.sololearn.com/profile/25425602',
+			imagepreview: true
 		},
 		// 'sololearn-machinelearning': {
 		// 	name: 'Sololearn - Machine Learning',
 		// 	photoURL: '../../cert-pics/sololearn-machinelearning.png',
 		// 	caption: 'Sololearn Course',
-		// 	link: 'https://www.sololearn.com/profile/25425602'
+		// 	link: 'https://www.sololearn.com/profile/25425602',
+
 		// },
 		'sololearn-python': {
 			name: 'Sololearn - Intermediate Python',
 			photoURL: '../../cert-pics/sololearn-python.png',
 			caption: 'Sololearn Course',
-			link: 'https://www.sololearn.com/profile/25425602'
+			link: 'https://www.sololearn.com/profile/25425602',
+			imagepreview: true
 		},
 		'apple-teacher': {
 			name: 'Recognition as an Apple teacher',
 			photoURL: '../../cert-pics/apple-teacher.png',
 			caption: 'Certificate of recognition',
-			link: 'https://education.apple.com/en'
+			link: 'https://education.apple.com/en',
+			imagepreview: true
 		}
 	};
 	const otherCerts = {
+		's3-s4-results': {
+			name: 'S3 to S4 Results slip',
+			photoURL: '../../cert-pics/S3-S4-results-slip.jpg',
+			caption: 'From school',
+			link: '../../cert-pics/S3-S4-results-slip.pdf',
+			bold: true,
+			imagepreview: false
+		},
 		'co-curriculum-certificate-2023': {
 			name: 'Co-Curriculum Certificate 2023',
 			photoURL: '../../cert-pics/Co-Curriculum-Certificate.jpg',
 			caption: 'From school',
-			link: '../../cert-pics/Co-Curriculum-Certificate.pdf'
+			link: '../../cert-pics/Co-Curriculum-Certificate.pdf',
+			imagepreview: false
 		}
 	};
 	const certs = {
@@ -105,14 +120,17 @@
 			>
 				<button
 					bind:this={elementOnceList[i]}
+					class:bg-slate-700={Object.hasOwn(cert, 'bold')}
 					class="opacity-0 bg-gray-800 text-left flex flex-row lg:flex-col pb-5 mt-3 rounded-xl hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all duration-700 cursor-pointer card w-full -translate-x-10 blur"
 					class:opacity-100={displayList[i]}
 					class:blur-none={displayList[i]}
 					class:-translate-x-10={!displayList[i]}
 				>
 					<button
-						on:click={() => handleClick(cert.photoURL)}
-						class="relative photo flex justify-center items-center lg:w-full w-2/6 h-40"
+						on:click={() => (cert.imagepreview ? handleClick(cert.photoURL) : goto(cert.link))}
+						class:photo={cert.imagepreview}
+						class:photopdf={!cert.imagepreview}
+						class="relative flex justify-center items-center lg:w-full w-2/6 h-40"
 					>
 						<img
 							src={cert.photoURL}
@@ -120,6 +138,7 @@
 							class="lg:w-auto lg:h-full lg:max-h-60 w-auto max-h-full rounded-t-xl"
 						/>
 					</button>
+
 					<div class="flex flex-col gap-1 lg:w-11/12 w-7/12">
 						<a
 							href={cert.link}
@@ -176,7 +195,30 @@
 		transition: all;
 		transition-duration: 300ms;
 	}
+	.photopdf::before {
+		content: 'View PDF';
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: 500;
+		text-align: center;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		transform: translate(0, -100%);
+		background-color: black;
+		z-index: 9;
+		width: 100%;
+		height: 100%;
+		transform: translate(0px, 0px);
+		opacity: 0%;
+		transition: all;
+		transition-duration: 300ms;
+	}
 	.photo:hover::before {
+		opacity: 80%;
+	}
+	.photopdf:hover::before {
 		opacity: 80%;
 	}
 </style>

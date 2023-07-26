@@ -99,54 +99,63 @@ export const compCerts = {
 		name: 'Australian Informatics Olympiad 2022',
 		photoURL: '../../cert-pics/aio-2022.JPG',
 		caption: 'Bronze',
-		link: 'https://aio.edu.au/'
+		link: 'https://aio.edu.au/',
+		imagepreview: true
 	},
 	'bebras-2022': {
 		name: 'Bebras Computational Thinking Challenge 2022',
 		photoURL: '../../cert-pics/bebras-2022.png',
 		caption: 'Honorable mention',
-		link: 'https://www.bebraschallenge.org/'
+		link: 'https://www.bebraschallenge.org/',
+		imagepreview: true
 	},
 	'cat-2022': {
 		name: 'Computational And Algorithmic Thinking 2022',
 		photoURL: '../../cert-pics/cat-2022.JPG',
 		caption: 'Participation',
-		link: 'https://www.amt.edu.au/cat'
+		link: 'https://www.amt.edu.au/cat',
+		imagepreview: true
 	},
 	'drct-2021': {
 		name: 'Design Thinking with Robotics and Computational Thinking 2021',
 		photoURL: '../../cert-pics/drct-2021.JPG',
 		caption: 'Gold',
-		link: 'https://www.internationalolympiadacademy.com/olympiads/drct-design-thinking-with-robotics-and-computational-thinking'
+		link: 'https://www.internationalolympiadacademy.com/olympiads/drct-design-thinking-with-robotics-and-computational-thinking',
+		imagepreview: true
 	},
 	'drct-global-finals-2021': {
 		name: 'Design Thinking with Robotics and Computational Thinking Global Finals 2021',
 		photoURL: '../../cert-pics/drct-global-finals-2021.jpg',
 		caption: 'Silver',
-		link: 'https://smo-testing.com/drctfinals/'
+		link: 'https://smo-testing.com/drctfinals/',
+		imagepreview: true
 	},
 	'immc-2023': {
 		name: 'International Mathematical Modeling Challenge 2023 (IM²C 2023)',
 		photoURL: '../../cert-pics/immc-2023.jpg',
 		caption: 'Certificate of Commendation',
-		link: 'https://www.immchallenge.org/'
+		link: 'https://www.immchallenge.org/',
+		imagepreview: true
 	},
 	'perse-2022': {
 		name: 'Perse Coding Team Challenge 2022',
 		photoURL: '../../cert-pics/perse-2022.png',
 		caption: 'Merit',
-		link: 'https://pctc.perse.co.uk/'
+		link: 'https://pctc.perse.co.uk/',
+		imagepreview: true
 	},
 	'perse-2023': {
 		name: 'Perse Coding Team Challenge 2023',
 		photoURL: '../../cert-pics/perse-2023.png',
 		caption: 'Distinction',
-		link: 'https://pctc.perse.co.uk/'
+		link: 'https://pctc.perse.co.uk/',
+		imagepreview: true
 	},
 	'perse-2023-round-2': {
 		name: 'Perse Coding Team Challenge 2023 Final Round',
 		photoURL: '../../cert-pics/perse-2023-r2.png',
 		caption: 'Distinction',
-		link: 'https://pctc.perse.co.uk/'
+		link: 'https://pctc.perse.co.uk/',
+		imagepreview: true
 	}
 };
