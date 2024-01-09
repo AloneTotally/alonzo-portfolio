@@ -41,29 +41,34 @@
 			imagepreview: true
 		}
 	};
-	const otherCerts = {
-		's3-s4-results': {
-			name: 'S3 to S4 Results slip',
-			photoURL: '../../cert-pics/S3-S4-results-slip.jpg',
-			caption: 'From school',
-			link: '../../cert-pics/S3-S4-results-slip.pdf',
-			bold: true,
-			imagepreview: false
-		},
-		'co-curriculum-certificate-2023': {
-			name: 'Co-Curriculum Certificate 2023',
-			photoURL: '../../cert-pics/Co-Curriculum-Certificate.jpg',
-			caption: 'From school',
-			link: '../../cert-pics/Co-Curriculum-Certificate.pdf',
-			imagepreview: false
-		}
-	};
+	// const otherCerts = {
+	// 	's3-s4-results': {
+	// 		name: 'S3 to S4 Results slip',
+	// 		photoURL: '../../cert-pics/S3-S4-results-slip.jpg',
+	// 		caption: 'From school',
+	// 		link: '../../cert-pics/S3-S4-results-slip.pdf',
+	// 		bold: true,
+	// 		imagepreview: false
+	// 	},
+	// 	'co-curriculum-certificate-2023': {
+	// 		name: 'Co-Curriculum Certificate 2023',
+	// 		photoURL: '../../cert-pics/Co-Curriculum-Certificate.jpg',
+	// 		caption: 'From school',
+	// 		link: '../../cert-pics/Co-Curriculum-Certificate.pdf',
+	// 		imagepreview: false
+	// 	}
+	// };
 	const certs = {
-		All: { ...otherCerts, ...compCerts, ...courseCerts },
+		All: { ...compCerts, ...courseCerts },
 		Competitions: compCerts,
-		Courses: courseCerts,
-		Others: otherCerts
+		Courses: courseCerts
 	};
+	// const certs = {
+	// 	All: { ...otherCerts, ...compCerts, ...courseCerts },
+	// 	Competitions: compCerts,
+	// 	Courses: courseCerts,
+	// 	Others: otherCerts
+	// };
 	let modalPhoto = '';
 	let showModal: boolean = false;
 	const handleClick = (photoURL: string) => {
@@ -71,7 +76,8 @@
 		modalPhoto = photoURL;
 	};
 
-	const sortNav = ['All', 'Competitions', 'Courses', 'Others'];
+	const sortNav = ['All', 'Competitions', 'Courses'];
+	// const sortNav = ['All', 'Competitions', 'Courses', 'Others'];
 	let currentGallery = certs.All;
 	let currentNavItem = 'All';
 	const sortCerts = (navItem: string) => {
